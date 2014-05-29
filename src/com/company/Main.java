@@ -11,7 +11,7 @@ public class Main {
         Random rnd = new Random();
         rnd.setSeed(System.currentTimeMillis());
         int throwIterations = 1;
-        String printBuffer = "";
+        //String printBuffer = "";
         //Di throwing section
 	    for(int i=0;i<6;i++){
             throwIterations*=10;
@@ -24,7 +24,7 @@ public class Main {
                     String.format("%5.2f", results[4])+"% "+
                     String.format("%5.2f", results[5])+"%");
         }
-        }
+    }
 
     public static float[] throwIt(int iterations, Random rnd){
         /**
@@ -33,17 +33,19 @@ public class Main {
          * The results being returned are formatted for the output.
          *
          * @param iterations number of times to throw the di
+         * @param rnd Random number generator that is already seeded
          * @return Array of percentages showing distribution of di throws
          */
         float[] diResults = new float[6];
-        int i = 0;
-        //1+rnd.nextInt(6);
+        int i;
         for(int k=0;k<iterations;k++){
             i = rnd.nextInt(6);
             diResults[i]++;
         }
         for(int j=0;j<6;j++){
-            diResults[j]/=iterations; diResults[j]*=100;}
+            diResults[j]/=iterations;
+            diResults[j]*=100;
+        }
         return diResults;
     }
 
@@ -52,7 +54,7 @@ public class Main {
          * Returns a string that acts as a space buffer for display purposes
          *
          * @param i Reduces buffer by i spaces
-         * @return String that consists of 10-i spaces
+         * @return String that consists of 9-i spaces
          */
         String buffer = "";
         for(int u=0;u<9-i;u++)
