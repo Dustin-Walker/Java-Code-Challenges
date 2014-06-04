@@ -21,7 +21,7 @@ public class Main {
             deckSize = mainDeck.size();
             handsDealt++;
         }
-        System.out.println("After "+handsDealt+" hands there was "+
+        System.out.println("After "+handsDealt+" hands there were "+
                blackjackCounter+" blackjacks at "+
                String.format("%5.2f", 100.0f*blackjackCounter/handsDealt)+"%");
     }
