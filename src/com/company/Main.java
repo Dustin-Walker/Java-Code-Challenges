@@ -3,16 +3,15 @@ import java.util.Random;
 import java.lang.String;
 
 public class Main {
-
-
     public static void main(String[] args) {
+        //Display header
         System.out.println("# of Rolls 1s     2s     3s     4s     5s     6s    ");
         System.out.println("====================================================");
+        //Create random seed
         Random rnd = new Random();
         rnd.setSeed(System.currentTimeMillis());
+        //Throw the di
         int throwIterations = 1;
-        //String printBuffer = "";
-        //Di throwing section
 	    for(int i=0;i<6;i++){
             throwIterations*=10;
             float[] results = throwIt(throwIterations, rnd);
@@ -25,7 +24,6 @@ public class Main {
                     String.format("%5.2f", results[5])+"%");
         }
     }
-
     public static float[] throwIt(int iterations, Random rnd){
         /**
          * Returns an array of percentages detailing the distribution
@@ -48,7 +46,6 @@ public class Main {
         }
         return diResults;
     }
-
     public static String printBuffer(int i){
         /**
          * Returns a string that acts as a space buffer for display purposes
