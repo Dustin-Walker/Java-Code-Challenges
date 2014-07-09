@@ -10,7 +10,7 @@ import java.io.UnsupportedEncodingException;
  */
 public class Page {
 
-    private static String header = "<!DOCTYPE html><html><head><title></title></head>";
+    private final String HEADER = "<!DOCTYPE html><html><head><title></title></head>";
     private String body;
 
     public Page(String inputParagraph){
@@ -18,10 +18,15 @@ public class Page {
     }
 
     public String constructPageToString(){
-        return header+body;
+        return HEADER+body;
     }
 
     public void savePageToHTMLFile(String fileName) throws FileNotFoundException, UnsupportedEncodingException {
+        /**
+         * Saves the page object to an HTML file.
+         * To do: Check to see if user added .html extension, add if not.
+         * @param fileName File name to be used for the HTML file being created
+         */
         PrintWriter writer = new PrintWriter(fileName, "UTF-8");
         writer.print(constructPageToString());
         writer.close();
