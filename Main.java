@@ -3,6 +3,7 @@ package com.company;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Main {
 
@@ -11,10 +12,24 @@ public class Main {
         File file = new File("enable1.txt");
         ArrayList<String> wordList = constructList(file);
         ArrayList<String> newList = listCompactor(wordList);
-        for(String word : newList){
-            System.out.println(word);
+        Scanner inputReader = new Scanner(System.in);
+        boolean inputCheck=false;
+        for(String word : newList)
+            System.out.println(word.toUpperCase());
+        Random generator = new Random(System.currentTimeMillis());
+        String referenceWord = newList.get(generator.nextInt(newList.size()));
+        for(int i = 4; i > 0;i--){
+            System.out.print("Guess ("+i+" left)? ");
+            String inputString = inputReader.next();
+            inputCheck = inputChecker(inputString, referenceWord);
+            if(inputCheck)
+                break;
         }
-
+        if(inputCheck){
+            System.out.println("You win!");
+        } else {
+            System.out.println("You lose :(\nThe word was "+referenceWord);
+        }
     }
 
     public static ArrayList<String> constructList(File file) {
@@ -59,5 +74,17 @@ public class Main {
             wordList.remove(randomPosition);
         }
         return newList;
+    }
+
+    public static boolean inputChecker(String input, String referenceWord){
+        int correctLetters=0;
+        input = input.toLowerCase();
+        System.out.println(input);
+        for (int i = 0; i < input.length(); i++) {
+            if (input.charAt(i) == referenceWord.charAt(i))
+                correctLetters++;
+            }
+            System.out.println(correctLetters+"/7 correct");
+            return (correctLetters==7);
     }
 }
