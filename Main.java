@@ -11,13 +11,13 @@ public class Main {
 	// Enable1.txt is the local dictionary file to use
         File file = new File("enable1.txt");
         ArrayList<String> wordList = constructList(file);
-        ArrayList<String> newList = listCompactor(wordList);
+        wordList = listCompactor(wordList);
         Scanner inputReader = new Scanner(System.in);
         boolean inputCheck=false;
-        for(String word : newList)
+        for(String word : wordList)
             System.out.println(word.toUpperCase());
         Random generator = new Random(System.currentTimeMillis());
-        String referenceWord = newList.get(generator.nextInt(newList.size()));
+        String referenceWord = wordList.get(generator.nextInt(wordList.size()));
         for(int i = 4; i > 0;i--){
             System.out.print("Guess ("+i+" left)? ");
             String inputString=inputReader.next();
