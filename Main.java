@@ -20,7 +20,11 @@ public class Main {
         String referenceWord = newList.get(generator.nextInt(newList.size()));
         for(int i = 4; i > 0;i--){
             System.out.print("Guess ("+i+" left)? ");
-            String inputString = inputReader.next();
+            String inputString=inputReader.next();
+            while(inputString.length()!=referenceWord.length()){
+                System.out.print("Invalid entry. Try again: ");
+                inputString=inputReader.next();
+            }
             inputCheck = inputChecker(inputString, referenceWord);
             if(inputCheck)
                 break;
