@@ -38,8 +38,10 @@ public class Main {
 
     public static ArrayList<String> constructList(File file) {
         /**
+         * This method creates a list of all words of some length
+         * from a dictionary file.
          * @param file Name of the dictionary file to be used
-         * @return List of strings to use for the game
+         * @return List of strings of equal length
          */
         BufferedReader reader = null;
         ArrayList<String> wordList = null;
@@ -70,6 +72,12 @@ public class Main {
     }
 
     public static  ArrayList<String> listCompactor(ArrayList<String> wordList){
+        /**
+         * Takes list of words and returns a new list consisting of
+         * ten random words from the original list.
+         * @param wordList Source list
+         * @return List of 10 words of equal length
+         */
         ArrayList<String> newList = new ArrayList<String>(10);
         Random generator = new Random(System.currentTimeMillis());
         for(int i=0;i<10;i++) {
@@ -81,6 +89,13 @@ public class Main {
     }
 
     public static boolean inputChecker(String input, String referenceWord){
+        /**
+         * Checks to see how many letters from the input word
+         * match the reference word.
+         * @param input User input word
+         * @param referenceWord Word the user is trying to guess
+         * @return True if user correctly guesses reference word
+         */
         int correctLetters=0;
         input = input.toLowerCase();
         System.out.println(input);
