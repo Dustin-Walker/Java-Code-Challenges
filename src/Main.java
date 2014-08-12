@@ -13,7 +13,7 @@ public class Main {
         }
     }
 
-    public static int[] morseIterator(int[] input){
+    public static int[] morseIterator(int[] originalMorseSequence){
         /**
          * Returns the next iteration in the Thue-Morse sequence.
          * The Thue-Morse sequence takes the input and outputs the
@@ -21,7 +21,7 @@ public class Main {
          * @param input Morse sequence to be iterated, should only contains 1s and 0s
          * @return Array containing next iteration in the Thue-Morse sequence
          */
-        int[] tmpPrefix = input.clone(), tmpSuffix = input.clone();
+        int[] tmpPrefix = originalMorseSequence.clone(), tmpSuffix = originalMorseSequence.clone();
         for(int i=0;i<tmpSuffix.length;i++)
             tmpSuffix[i] = (tmpSuffix[i] == 0) ? 1 : 0;
         int[] returnArray = new int[tmpPrefix.length+tmpPrefix.length];
