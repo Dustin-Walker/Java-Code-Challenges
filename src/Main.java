@@ -38,7 +38,7 @@ public class Main {
                 sourcePoint.translate(Float.parseFloat(line[1]),Float.parseFloat(line[2]));}
             System.out.println("New point location: ("+sourcePoint.getX()+","+sourcePoint.getY()+")");
         }
-        System.out.println("The new value should be (7,6). Value: ("+sourcePoint.getX()+","+sourcePoint.getY()+")");
+        System.out.println("Final Value: ("+sourcePoint.getX()+","+sourcePoint.getY()+")");
 
     }
 
