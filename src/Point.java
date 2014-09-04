@@ -39,11 +39,18 @@ public class Point {
         this.y = tmpY2+pivotPointY;
     }
 
-    public void scale(){
-
+    public void scale(float scalePointX, float scalePointY, float scaleFactor){
+        float tempX = ((this.x-scalePointX)*scaleFactor)+scalePointX;
+        float tempY = ((this.y-scalePointY)*scaleFactor)+scalePointY;
+        this.x = tempX;
+        this.y = tempY;
     }
 
-    public void reflect(){
-
+    public void reflect(String axis){
+        axis.toLowerCase();
+        if(axis.equals("y"))
+            this.y *= -1.0;
+        else
+            this.x *= -1.0;
     }
 }
