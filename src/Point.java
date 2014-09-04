@@ -31,12 +31,13 @@ public class Point {
         float tmpY = this.y-pivotPointY;
 
         //Step 2: Rotation
-        float tmpX2 = (float) (tmpX*Math.cos(rotationAngle)-tmpY*Math.sin(rotationAngle));
-        float tmpY2 = (float) (tmpX*Math.sin(rotationAngle)-tmpY*Math.cos(rotationAngle));
+        float tmpX2 = (float) (tmpX*Math.cos((-1)*rotationAngle)-tmpY*Math.sin((-1)*rotationAngle));
+        float tmpY2 = (float) (tmpX*Math.sin((-1)*rotationAngle)+tmpY*Math.cos((-1)*rotationAngle));
 
         //Step 3: Move point back
         this.x = tmpX2+pivotPointX;
         this.y = tmpY2+pivotPointY;
+
     }
 
     public void scale(float scalePointX, float scalePointY, float scaleFactor){
@@ -49,8 +50,8 @@ public class Point {
     public void reflect(String axis){
         axis = axis.toLowerCase();
         if(axis.equals("y"))
-            this.y *= -1.0;
-        else
             this.x *= -1.0;
+        else
+            this.y *= -1.0;
     }
 }
