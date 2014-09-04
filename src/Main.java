@@ -8,14 +8,15 @@ public class Main {
 
 
         Scanner fileScanner = new Scanner(new FileReader("sample2.in"));
-        String[] line = fileScanner.nextLine().split("[\\D]");
-        float[] temp = new float[30];
+        String[] line = fileScanner.nextLine().split("[,\\(\\)]");
+        float[] temp = new float[3];
         //First line contains source point
         int i=0;
         for(String s: line)
-            if (s.matches("[\\d]"))
+            if (!s.isEmpty())
                 temp[i++] = Float.parseFloat(s);
         Point sourcePoint = new Point(temp[0],temp[1]);
+        System.out.println("The original value is ("+sourcePoint.getX()+","+sourcePoint.getY()+")");
         //Read the transformation lines
         while(fileScanner.hasNextLine()) {
             line = fileScanner.nextLine().split("[,\\(\\)]");
