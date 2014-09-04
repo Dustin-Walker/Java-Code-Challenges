@@ -47,7 +47,7 @@ public class Point {
     }
 
     public void reflect(String axis){
-        axis.toLowerCase();
+        axis = axis.toLowerCase();
         if(axis.equals("y"))
             this.y *= -1.0;
         else
