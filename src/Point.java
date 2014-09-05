@@ -37,7 +37,6 @@ public class Point {
         //Step 3: Move point back
         this.x = tmpX2+pivotPointX;
         this.y = tmpY2+pivotPointY;
-
     }
 
     public void scale(float scalePointX, float scalePointY, float scaleFactor){
