@@ -52,8 +52,16 @@ public class Main {
             //noinspection ResultOfMethodCallIgnored
             motoristList.get("LO04CHZ").toString();
 
-            for(String s: keychain){
+            /*for(String s: keychain){
                 Motorist temp = motoristList.get(s);
+                for(Double d: temp.averageSpeedList){
+                    if(isSpeeding(speedLimit, d))
+                        System.out.println("Vehicle "+s+" broke the speed limit by "+Math.abs(speedLimit-d*2.23694));
+                }
+            }*/
+            for(String s: motoristList.keySet()){
+                Motorist temp = motoristList.get(s);
+                System.out.println(s);
                 for(Double d: temp.averageSpeedList){
                     if(isSpeeding(speedLimit, d))
                         System.out.println("Vehicle "+s+" broke the speed limit by "+Math.abs(speedLimit-d*2.23694));
