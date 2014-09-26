@@ -48,9 +48,9 @@ public class Main {
                     }
                 }
             }
-            printCameraPositions(cameraPositions);
+           // printCameraPositions(cameraPositions);
             //noinspection ResultOfMethodCallIgnored
-            motoristList.get("LO04CHZ").toString();
+           // motoristList.get("LO04CHZ").toString();
 
             /*for(String s: keychain){
                 Motorist temp = motoristList.get(s);
@@ -61,10 +61,12 @@ public class Main {
             }*/
             for(String s: motoristList.keySet()){
                 Motorist temp = motoristList.get(s);
-                System.out.println(s);
+               // System.out.println(s);
+                temp.calculateAverageSpeeds();
                 for(Double d: temp.averageSpeedList){
                     if(isSpeeding(speedLimit, d))
-                        System.out.println("Vehicle "+s+" broke the speed limit by "+Math.abs(speedLimit-d*2.23694));
+                        System.out.println("Vehicle "+s+" broke the speed limit by "+
+                                String.format("%.1f",Math.abs(speedLimit-d*2.23694)));
                 }
             }
         }
