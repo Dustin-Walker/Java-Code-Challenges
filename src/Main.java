@@ -14,7 +14,6 @@ public class Main {
             fileScanner = new Scanner(new FileReader("sample1.in"));
             String[] line;
             ArrayList<Double> cameraPositions = new ArrayList<Double>();
-            ArrayList<String> keychain = new ArrayList<String>();
             Hashtable<String, Motorist> motoristList = new Hashtable<String, Motorist>();
             if(fileScanner.hasNextLine()) {
                 line = fileScanner.nextLine().split("[\\s]");
@@ -27,10 +26,6 @@ public class Main {
                 if(line[0].equals("Speed")) {
                     cameraPositions.add(Integer.parseInt(line[3])-1, (double) Integer.parseInt(line[5]));
                 } else
-                //Start of camera log case
-                if(line[0].equals("Start")){
-                    //Does anything even need to be done with this?
-                } else
                 //Vehicle passes camera case
                 if(line[0].equals("Vehicle")){
                     String licensePlateNumber = line[1]+line[2];
@@ -42,41 +37,30 @@ public class Main {
                     } else {
                         //Motorist has not passed a camera yet.
                         Motorist temp = new Motorist(cameraPositions.get(Integer.parseInt(line[5])-1), line[7],
-                                licensePlateNumber);
+                             licensePlateNumber);
                         motoristList.put(licensePlateNumber, temp);
-                        keychain.add(licensePlateNumber);
                     }
                 }
             }
-           // printCameraPositions(cameraPositions);
-            //noinspection ResultOfMethodCallIgnored
-           // motoristList.get("LO04CHZ").toString();
-
-            /*for(String s: keychain){
-                Motorist temp = motoristList.get(s);
-                for(Double d: temp.averageSpeedList){
-                    if(isSpeeding(speedLimit, d))
-                        System.out.println("Vehicle "+s+" broke the speed limit by "+Math.abs(speedLimit-d*2.23694));
-                }
-            }*/
             for(String s: motoristList.keySet()){
                 Motorist temp = motoristList.get(s);
-               // System.out.println(s);
                 temp.calculateAverageSpeeds();
-                for(Double d: temp.averageSpeedList){
-                    if(isSpeeding(speedLimit, d))
-                        System.out.println("Vehicle "+s+" broke the speed limit by "+
-                                String.format("%.1f",Math.abs(speedLimit-d*2.23694)));
-                }
+                for(Double d: temp.averageSpeedList)
+                    if (isSpeeding(speedLimit, d))
+                        System.out.println("Vehicle " + s + " broke the speed limit by " +
+                                String.format("%.1f", Math.abs(speedLimit - d * 2.23694))+" mph.");
             }
         }
-
         catch (FileNotFoundException e) {
             e.printStackTrace();
             System.out.println(e.getMessage());
         }
     }
 
+    /**
+     * This method prints the position of all cameras.
+     * This was for testing purposes.
+     */
     public static void printCameraPositions(ArrayList<Double> cameraPositions){
         int e=1;
         for(Double i:cameraPositions){
@@ -85,6 +69,9 @@ public class Main {
         }
     }
 
+    /**
+     * This method can be used to determine if a motorist was speeding.
+     */
     public static boolean isSpeeding(float speedLimit, Double vehicleSpeed){
         vehicleSpeed*=2.23694;
         return vehicleSpeed > speedLimit;

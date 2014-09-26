@@ -7,24 +7,33 @@ public class Motorist {
 
 
     //Class members are all private.
-    //Once a motorist objected is initialized, the data should only be accessed
-    //via the averageSpeed function.
     private String licensePlate;
     private ArrayList<Double> vehiclePositionList = new ArrayList<Double>();
     private ArrayList<Float> vehicleTimeList = new ArrayList<Float>();
     public ArrayList<Double> averageSpeedList = new ArrayList<Double>();
 
-    //Class constructor
+    /**
+     * This is the only class constructor that should be used.
+     * This constructor should be used when a vehicle first passes a camera.
+     * @param p1 Position of vehicle when first passing the camera
+     * @param t1 Time when vehicle first passing the camera
+     * @param licensePlate Vehicle license plate and object identifier
+     */
     public Motorist(Double p1, String t1, String licensePlate) {
         vehiclePositionList.add(p1);
         this.addTime(t1);
         this.licensePlate = licensePlate;
     }
-    //Class methods
 
+    /**
+     * Converts a string representing time in
+     * the format "hours:minutes:seconds" into
+     * a float representing total seconds.
+     *
+     * @param time time to be parsed
+     * @return total seconds in time
+     */
     private float parseTime(String time) {
-        //Convert string time to float time
-        //regex split along ':'
         String[] temp = time.split("[:]");
         float returnTime=0;//represents milliseconds
         //parse here and return returnTime
@@ -34,14 +43,25 @@ public class Motorist {
         return returnTime;
     }
 
+    /**
+     * @param position Value to be stored locally
+     */
     public void addPosition(Double position) {
         vehiclePositionList.add(position);
     }
 
+    /**
+     * @param time Value to be stored locally
+     */
     public void addTime(String time){
         vehicleTimeList.add(parseTime(time));
     }
 
+    /**
+     * This method calculates all of the average speeds
+     * between every position the motorist has passed.
+     * All values are stored in an arrayList.
+     */
     public void calculateAverageSpeeds(){
         if(vehicleTimeList.size()>1){
             for(int i=1;i<vehicleTimeList.size();i++){
@@ -50,13 +70,7 @@ public class Motorist {
                 averageSpeedList.add((deltaX)/(deltaT));
             }
         }
-        int e=1;
-        for(Double f: averageSpeedList){
-            System.out.println("Average speed #"+e+": "+f);
-            e++;
-        }
     }
-
 
     @Override
     public String toString(){
