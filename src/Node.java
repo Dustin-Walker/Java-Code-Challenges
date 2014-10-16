@@ -5,9 +5,7 @@ public class Node {
     /**
      * This constructor is used to set up the initial node
      */
-    public Node() {
-        setValue(0);
-    }
+    public Node() { setValue(Integer.MIN_VALUE);   }
 
     /**
      * This is the main constructor. Sets up the node with the input value.

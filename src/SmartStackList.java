@@ -6,8 +6,8 @@ public class SmartStackList {
     // Setting up the stack
     private Node stackInitialNode = new Node();
     private Node endOfStackNode = stackInitialNode;
-    private Node sortedCurrentNode = new Node();
-    private Node sortedInitialNode = sortedCurrentNode;
+    private Node sortedInitialNode = new Node();
+    private Node sortedCurrentNode = sortedInitialNode;
     private int sizeCounter;
 
     /**
@@ -17,23 +17,39 @@ public class SmartStackList {
     public void push(int newValue){
         sizeCounter++;
         // Stack code
-        Node newStackNode = new Node(newValue);
-        endOfStackNode.setNextNode(newStackNode);
-        newStackNode.setPreviousNode(endOfStackNode);
-        endOfStackNode = newStackNode;
-        // Sorted array code
-        Node newSortedNode = new Node(newValue);
-        sortedCurrentNode = sortedInitialNode;
-        while(sortedCurrentNode.getNextNode()!=null){
-            if(sortedCurrentNode.getNextNode().getValue()<=newSortedNode.getValue())
-                sortedCurrentNode = sortedCurrentNode.getNextNode();
-            else{
-                break;
-            }
+        // Is this the first item on the stack?
+        if(endOfStackNode.getValue()==Integer.MIN_VALUE){
+            endOfStackNode.setValue(newValue);
+        } else {
+        // Create a new node and push it onto the stack
+            Node newStackNode = new Node(newValue);
+            endOfStackNode.setNextNode(newStackNode);
+            newStackNode.setPreviousNode(endOfStackNode);
+            endOfStackNode = newStackNode;
         }
-        newSortedNode.setNextNode(sortedCurrentNode.getNextNode());
-        sortedCurrentNode.setNextNode(newSortedNode);
-        sortedCurrentNode.getNextNode().setPreviousNode(sortedCurrentNode);
+        // Sorted array code
+        // Is this the first item in the array?
+        if(sortedCurrentNode.getValue()==Integer.MIN_VALUE){
+            sortedCurrentNode.setValue(newValue);
+        } else {
+            Node newSortedNode = new Node(newValue);
+            sortedCurrentNode = sortedInitialNode;
+            while (sortedCurrentNode.getNextNode() != null) {
+                if (sortedCurrentNode.getValue() <= newSortedNode.getValue()) {
+                    // Swap
+                    //Node tempNode = sortedCurrentNode;
+
+
+                    sortedCurrentNode = sortedCurrentNode.getNextNode();
+                }
+                else {
+                    break;
+                }
+            }
+            newSortedNode.setNextNode(sortedCurrentNode.getNextNode());
+            sortedCurrentNode.setNextNode(newSortedNode);
+            sortedCurrentNode.getNextNode().setPreviousNode(sortedCurrentNode);
+        }
     }
 
     /**
@@ -43,7 +59,9 @@ public class SmartStackList {
         sizeCounter--;
         // Stack code
         int searchValue = endOfStackNode.getValue();
-        endOfStackNode = endOfStackNode.getPreviousNode();
+        if(endOfStackNode.getPreviousNode()!=null){
+            endOfStackNode = endOfStackNode.getPreviousNode();
+        }
         endOfStackNode.setNextNode(null);
         // Sorted array code
         sortedCurrentNode = sortedInitialNode;
@@ -54,7 +72,9 @@ public class SmartStackList {
             sortedCurrentNode.getPreviousNode().setNextNode(sortedCurrentNode.getNextNode());
             sortedCurrentNode.getNextNode().setPreviousNode(sortedCurrentNode.getPreviousNode());
         } else {
-            sortedCurrentNode.getPreviousNode().setNextNode(null);
+            if(sortedCurrentNode.getPreviousNode()!=null) {
+                sortedCurrentNode.getPreviousNode().setNextNode(null);
+            }
         }
     }
 
@@ -69,7 +89,39 @@ public class SmartStackList {
      * This method removes all elements greater than the input value from the stack.
      */
     public void removeGreater(int inputValue){
-        // TODO Write the removeGreater method.
+        // Stack code
+        endOfStackNode = stackInitialNode;
+        while(endOfStackNode.getNextNode()!=null){
+            endOfStackNode = endOfStackNode.getNextNode();
+            if(endOfStackNode.getValue()>inputValue){
+                if(endOfStackNode.getPreviousNode()!=null)
+                    endOfStackNode.getPreviousNode().setNextNode(endOfStackNode.getNextNode());
+                if(endOfStackNode.getNextNode()!=null)
+                    endOfStackNode.getNextNode().setPreviousNode(endOfStackNode.getPreviousNode());
+            }
+        }
+        if(endOfStackNode.getValue()>inputValue) {
+            endOfStackNode = endOfStackNode.getPreviousNode();
+            endOfStackNode.setNextNode(null);
+        }
+        // Sorted array code
+        // Find the appropriate value and just unhook the list
+        sortedCurrentNode = sortedInitialNode;
+        while(sortedCurrentNode.getValue()<=inputValue) {
+            if(sortedCurrentNode.getNextNode()!=null)
+                sortedCurrentNode = sortedCurrentNode.getNextNode();
+            else{break;}
+        }
+        if(sortedCurrentNode.getValue()>inputValue) {
+            if (sortedCurrentNode.getNextNode() != null)
+                sortedCurrentNode.setNextNode(null);
+            if(sortedCurrentNode.getPreviousNode()!=null) {
+                sortedCurrentNode.getPreviousNode().setNextNode(null);
+            } else {
+              // Last item in the array
+                sortedCurrentNode.setValue(Integer.MIN_VALUE);
+            }
+        }
     }
 
     /**
@@ -78,7 +130,7 @@ public class SmartStackList {
      */
     public void displayStack(){
         System.out.print("Stack order: ");
-        while(endOfStackNode.getPreviousNode().getPreviousNode()!=null){
+        while(endOfStackNode.getPreviousNode()!=null){
             System.out.print(endOfStackNode.getValue()+", ");
             endOfStackNode = endOfStackNode.getPreviousNode();
         }
@@ -90,12 +142,17 @@ public class SmartStackList {
      */
     public void displayOrdered(){
         System.out.print("Sorted order: ");
-        sortedCurrentNode = sortedInitialNode.getNextNode();
+        sortedCurrentNode = sortedInitialNode;
         while(sortedCurrentNode.getNextNode()!=null){
-            System.out.print(sortedCurrentNode.getValue()+", ");
-            sortedCurrentNode = sortedCurrentNode.getNextNode();
+            if(sortedCurrentNode.getValue()!=Integer.MIN_VALUE) {
+                System.out.print(sortedCurrentNode.getValue() + ", ");
+                sortedCurrentNode = sortedCurrentNode.getNextNode();
+            }
         }
-        System.out.println(sortedCurrentNode.getValue());
+        if(sortedCurrentNode.getValue()!=Integer.MIN_VALUE) {
+            System.out.print(sortedCurrentNode.getValue());
+        }
+        System.out.println();
     }
 
 }
