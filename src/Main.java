@@ -1,0 +1,17 @@
+public class Main {
+
+    public static void main(String[] args) {
+        SmartStackList smartStackList = new SmartStackList();
+        smartStackList.push(1);
+        smartStackList.push(2);
+        smartStackList.push(3);
+        smartStackList.push(4);
+        smartStackList.pop();
+        smartStackList.push(5);
+        smartStackList.push(6);
+        smartStackList.displayStack();
+        smartStackList.size();
+        smartStackList.displayOrdered();
+        // TODO Unit tests.
+    }
+}
