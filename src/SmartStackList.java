@@ -92,17 +92,24 @@ public class SmartStackList {
         // Stack code
         endOfStackNode = stackInitialNode;
         while(endOfStackNode.getNextNode()!=null){
-            endOfStackNode = endOfStackNode.getNextNode();
             if(endOfStackNode.getValue()>inputValue){
                 if(endOfStackNode.getPreviousNode()!=null)
                     endOfStackNode.getPreviousNode().setNextNode(endOfStackNode.getNextNode());
                 if(endOfStackNode.getNextNode()!=null)
                     endOfStackNode.getNextNode().setPreviousNode(endOfStackNode.getPreviousNode());
             }
+            endOfStackNode = endOfStackNode.getNextNode();
         }
-        if(endOfStackNode.getValue()>inputValue) {
-            endOfStackNode = endOfStackNode.getPreviousNode();
-            endOfStackNode.setNextNode(null);
+        // Check the final element on the stack
+        if(endOfStackNode.getValue()>inputValue){
+            if(endOfStackNode.getPreviousNode()==null){
+                // This is the only node in the stack
+                endOfStackNode.resetNode();
+            } else {
+                // This is not the only node in the stack
+                endOfStackNode = endOfStackNode.getPreviousNode();
+                endOfStackNode.setNextNode(null);
+            }
         }
         // Sorted array code
         // Find the appropriate value and just unhook the list
@@ -134,7 +141,8 @@ public class SmartStackList {
             System.out.print(endOfStackNode.getValue()+", ");
             endOfStackNode = endOfStackNode.getPreviousNode();
         }
-        System.out.println(endOfStackNode.getValue());
+        if(endOfStackNode.getValue()!=Integer.MIN_VALUE)
+            System.out.println(endOfStackNode.getValue());
     }
 
     /**

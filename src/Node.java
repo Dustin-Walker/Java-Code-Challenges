@@ -42,4 +42,6 @@ public class Node {
     public void setValue(int value) {
         this.value = value;
     }
+
+    public void resetNode(){this.value = Integer.MIN_VALUE; }
 }
