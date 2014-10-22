@@ -61,6 +61,9 @@ public class SmartStackList {
             sizeCounter--;
         // Stack code
         int removalValue = endOfStackNode.getValue();
+        endOfStackNode = stackInitialNode;
+        while(endOfStackNode.getNextNode()!=null)
+            endOfStackNode = endOfStackNode.getNextNode();
         if(endOfStackNode.getPreviousNode()!=null){
             endOfStackNode = endOfStackNode.getPreviousNode();
             endOfStackNode.setNextNode(null);
@@ -133,7 +136,7 @@ public class SmartStackList {
             return;
         if(currentSortedListNode.getValue()>removeValue){
             currentSortedListNode.resetNode();
-            return;
+            //return;
         }
         while(currentSortedListNode.getNextNode()!=null && currentSortedListNode.getNextNode().getValue()<removeValue)
             currentSortedListNode = currentSortedListNode.getNextNode();
@@ -173,4 +176,5 @@ public class SmartStackList {
             System.out.println();
     }
 
+    public int getSize(){return this.sizeCounter;}
 }
