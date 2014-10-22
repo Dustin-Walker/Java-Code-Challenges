@@ -9,11 +9,10 @@ public class Main {
         smartStackList.push(1);
         smartStackList.push(4);
         smartStackList.displayOrdered();
-      //  smartStackList.pop();
-    //    smartStackList.pop();
-    //    smartStackList.pop();
+        smartStackList.pop();
+        smartStackList.pop();
+        smartStackList.pop();
         smartStackList.displayOrdered();
-
         smartStackList.push(5);
         smartStackList.push(1);
         smartStackList.push(6);
@@ -25,8 +24,6 @@ public class Main {
         smartStackList.removeGreater(-50);
         smartStackList.displayOrdered();
         smartStackList.displayStack();
-
-        // TODO Unit tests.
-        // TODO Fix the removeGreater function for sorted arrays. Again.
+        smartStackList.size();
     }
 }

@@ -13,6 +13,7 @@ public class SmartStackList {
     /**
      * This push method adds a new value to the stack and to the sorted array.
      * Stack part is finished.
+     * @param newValue value to give new node
      */
     public void push(int newValue){
         sizeCounter++;
@@ -96,13 +97,14 @@ public class SmartStackList {
     }
 
     /**
-     * This method removes all elements greater than the input value from the stack.
+     * This method removes all elements greater than the input value from the smart stack list.
+     * @param removeValue remove all values in the list greater than this
      */
-    public void removeGreater(int inputValue){
+    public void removeGreater(int removeValue){
         // Stack code
         endOfStackNode = stackInitialNode;
         while(endOfStackNode.getNextNode()!=null){
-            if(endOfStackNode.getValue()>inputValue){
+            if(endOfStackNode.getValue()>removeValue){
                 if(this.sizeCounter>0)
                     sizeCounter--;
                 if(endOfStackNode.getPreviousNode()!=null)
@@ -113,7 +115,7 @@ public class SmartStackList {
             endOfStackNode = endOfStackNode.getNextNode();
         }
         // Check the final element on the stack
-        if(endOfStackNode.getValue()>inputValue){
+        if(endOfStackNode.getValue()>removeValue){
             if(this.sizeCounter>0)
                 sizeCounter--;
             if(endOfStackNode.getPreviousNode()==null){
@@ -126,12 +128,22 @@ public class SmartStackList {
             }
         }
         // Sorted array code
-
+        currentSortedListNode = beginningSortedListNode;
+        if(currentSortedListNode.getValue()==Integer.MIN_VALUE)
+            return;
+        if(currentSortedListNode.getValue()>removeValue){
+            currentSortedListNode.resetNode();
+            return;
+        }
+        while(currentSortedListNode.getNextNode()!=null && currentSortedListNode.getNextNode().getValue()<removeValue)
+            currentSortedListNode = currentSortedListNode.getNextNode();
+        if(currentSortedListNode.getNextNode()!=null && currentSortedListNode.getNextNode().getValue()>removeValue)
+            currentSortedListNode.setNextNode(null);
     }
 
     /**
      * This method displays the stack in order from the most recently added node
-     * to the oldest addition.
+     * to the oldest addition. This occurs in O(n) time because the stack data structure is already in stack order.
      */
     public void displayStack(){
         System.out.print("Stack sorted order: ");
@@ -141,10 +153,12 @@ public class SmartStackList {
         }
         if(endOfStackNode.getValue()!=Integer.MIN_VALUE)
             System.out.println(endOfStackNode.getValue());
+        else
+            System.out.println();
     }
 
     /**
-     * Displays the ordered list.
+     * Displays the ordered list. This occurs in O(n) time because the list is already in ascending sorted order.
      */
     public void displayOrdered(){
         currentSortedListNode = beginningSortedListNode;

@@ -1,5 +1,7 @@
 /**
- * Created by Dustin Walker on 10/16/2014.
+ * Created by Dustin Walker on 10/16/2014 at 00:54.
+ * LINK - link to the program description
+ * ${PROJECT_NAME} program description
  */
 public class Node {
     /**
@@ -43,5 +45,8 @@ public class Node {
         this.value = value;
     }
 
-    public void resetNode(){this.value = Integer.MIN_VALUE; }
+    /**
+     * This method resets a node to the empty list state.
+     */
+    public void resetNode(){this.value = Integer.MIN_VALUE; this.nextNode=null;}
 }
