@@ -6,8 +6,8 @@ public class SmartStackList {
     // Setting up the stack
     private Node stackInitialNode = new Node();
     private Node endOfStackNode = stackInitialNode;
-    private Node sortedInitialNode = new Node();
-    private Node sortedCurrentNode = sortedInitialNode;
+    private Node beginningSortedListNode = new Node();
+    private Node currentSortedListNode = beginningSortedListNode;
     private int sizeCounter;
 
     /**
@@ -28,53 +28,63 @@ public class SmartStackList {
             endOfStackNode = newStackNode;
         }
         // Sorted array code
-        // Is this the first item in the array?
-        if(sortedCurrentNode.getValue()==Integer.MIN_VALUE){
-            sortedCurrentNode.setValue(newValue);
-        } else {
-            Node newSortedNode = new Node(newValue);
-            sortedCurrentNode = sortedInitialNode;
-            while (sortedCurrentNode.getNextNode() != null) {
-                if (sortedCurrentNode.getValue() <= newSortedNode.getValue()) {
-                    // Swap
-                    //Node tempNode = sortedCurrentNode;
-
-
-                    sortedCurrentNode = sortedCurrentNode.getNextNode();
-                }
-                else {
-                    break;
-                }
-            }
-            newSortedNode.setNextNode(sortedCurrentNode.getNextNode());
-            sortedCurrentNode.setNextNode(newSortedNode);
-            sortedCurrentNode.getNextNode().setPreviousNode(sortedCurrentNode);
+        Node newNode = new Node(newValue);
+        currentSortedListNode = beginningSortedListNode;
+        // Is the list empty?
+        if(currentSortedListNode.getValue()==Integer.MIN_VALUE){
+            currentSortedListNode.setValue(newValue);
+            return;
         }
+        // Insert at the beginning?
+        if(newNode.getValue()<=currentSortedListNode.getValue()){
+            newNode.setNextNode(currentSortedListNode);
+            beginningSortedListNode = newNode;
+            return;
+        }
+        // Find the appropriate space in the list
+        while(currentSortedListNode.getNextNode()!=null && currentSortedListNode.getNextNode().getValue()<newNode.getValue()){
+            currentSortedListNode = currentSortedListNode.getNextNode();
+        }
+        // Insert the new node after the current node
+        if(currentSortedListNode.getNextNode()!=null)
+            newNode.setNextNode(currentSortedListNode.getNextNode());
+        currentSortedListNode.setNextNode(newNode);
     }
+
 
     /**
      * This pop method removes an element off the stack
      */
     public void pop(){
-        sizeCounter--;
+        if(this.sizeCounter>0)
+            sizeCounter--;
         // Stack code
-        int searchValue = endOfStackNode.getValue();
+        int removalValue = endOfStackNode.getValue();
         if(endOfStackNode.getPreviousNode()!=null){
             endOfStackNode = endOfStackNode.getPreviousNode();
-        }
-        endOfStackNode.setNextNode(null);
-        // Sorted array code
-        sortedCurrentNode = sortedInitialNode;
-        while(sortedCurrentNode.getValue()!=searchValue){
-            sortedCurrentNode = sortedCurrentNode.getNextNode();
-        }
-        if(sortedCurrentNode.getNextNode()!=null) {
-            sortedCurrentNode.getPreviousNode().setNextNode(sortedCurrentNode.getNextNode());
-            sortedCurrentNode.getNextNode().setPreviousNode(sortedCurrentNode.getPreviousNode());
+            endOfStackNode.setNextNode(null);
         } else {
-            if(sortedCurrentNode.getPreviousNode()!=null) {
-                sortedCurrentNode.getPreviousNode().setNextNode(null);
-            }
+            endOfStackNode.resetNode();
+        }
+        // Sorted array code
+        currentSortedListNode = beginningSortedListNode;
+        if(currentSortedListNode.getValue()==Integer.MIN_VALUE)
+            return;
+        if(currentSortedListNode.getValue()==removalValue && currentSortedListNode.getNextNode()!=null){
+            // Remove from the beginning of the list
+            beginningSortedListNode = currentSortedListNode.getNextNode();
+        }
+        if(currentSortedListNode.getValue()==removalValue){
+            currentSortedListNode.resetNode();
+        }
+        // Find the node to be removed
+        while(currentSortedListNode.getNextNode()!=null && currentSortedListNode.getNextNode().getValue()!=removalValue)
+            currentSortedListNode = currentSortedListNode.getNextNode();
+        if(currentSortedListNode.getNextNode()!=null) {
+            if(currentSortedListNode.getNextNode().getNextNode() != null)
+                currentSortedListNode.setNextNode(currentSortedListNode.getNextNode().getNextNode());
+            else
+                currentSortedListNode.setNextNode(null);
         }
     }
 
@@ -93,6 +103,8 @@ public class SmartStackList {
         endOfStackNode = stackInitialNode;
         while(endOfStackNode.getNextNode()!=null){
             if(endOfStackNode.getValue()>inputValue){
+                if(this.sizeCounter>0)
+                    sizeCounter--;
                 if(endOfStackNode.getPreviousNode()!=null)
                     endOfStackNode.getPreviousNode().setNextNode(endOfStackNode.getNextNode());
                 if(endOfStackNode.getNextNode()!=null)
@@ -102,6 +114,8 @@ public class SmartStackList {
         }
         // Check the final element on the stack
         if(endOfStackNode.getValue()>inputValue){
+            if(this.sizeCounter>0)
+                sizeCounter--;
             if(endOfStackNode.getPreviousNode()==null){
                 // This is the only node in the stack
                 endOfStackNode.resetNode();
@@ -112,23 +126,7 @@ public class SmartStackList {
             }
         }
         // Sorted array code
-        // Find the appropriate value and just unhook the list
-        sortedCurrentNode = sortedInitialNode;
-        while(sortedCurrentNode.getValue()<=inputValue) {
-            if(sortedCurrentNode.getNextNode()!=null)
-                sortedCurrentNode = sortedCurrentNode.getNextNode();
-            else{break;}
-        }
-        if(sortedCurrentNode.getValue()>inputValue) {
-            if (sortedCurrentNode.getNextNode() != null)
-                sortedCurrentNode.setNextNode(null);
-            if(sortedCurrentNode.getPreviousNode()!=null) {
-                sortedCurrentNode.getPreviousNode().setNextNode(null);
-            } else {
-              // Last item in the array
-                sortedCurrentNode.setValue(Integer.MIN_VALUE);
-            }
-        }
+
     }
 
     /**
@@ -136,7 +134,7 @@ public class SmartStackList {
      * to the oldest addition.
      */
     public void displayStack(){
-        System.out.print("Stack order: ");
+        System.out.print("Stack sorted order: ");
         while(endOfStackNode.getPreviousNode()!=null){
             System.out.print(endOfStackNode.getValue()+", ");
             endOfStackNode = endOfStackNode.getPreviousNode();
@@ -149,18 +147,16 @@ public class SmartStackList {
      * Displays the ordered list.
      */
     public void displayOrdered(){
-        System.out.print("Sorted order: ");
-        sortedCurrentNode = sortedInitialNode;
-        while(sortedCurrentNode.getNextNode()!=null){
-            if(sortedCurrentNode.getValue()!=Integer.MIN_VALUE) {
-                System.out.print(sortedCurrentNode.getValue() + ", ");
-                sortedCurrentNode = sortedCurrentNode.getNextNode();
-            }
+        currentSortedListNode = beginningSortedListNode;
+        System.out.print("Ascending sorted order: ");
+        while(currentSortedListNode.getNextNode()!=null) {
+            System.out.print(currentSortedListNode.getValue() + ", ");
+            currentSortedListNode = currentSortedListNode.getNextNode();
         }
-        if(sortedCurrentNode.getValue()!=Integer.MIN_VALUE) {
-            System.out.print(sortedCurrentNode.getValue());
-        }
-        System.out.println();
+        if(currentSortedListNode.getValue()!=Integer.MIN_VALUE)
+            System.out.println(currentSortedListNode.getValue());
+        else
+            System.out.println();
     }
 
 }
