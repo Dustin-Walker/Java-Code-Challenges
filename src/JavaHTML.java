@@ -41,6 +41,7 @@ public class JavaHTML {
                 String fileString = sc.nextLine();
                 fileString = spaceReplace(fileString);
                 fileString = keywordCheck(fileString);
+                fileString = commentMarker(fileString);
                 returnString += "<p>" + fileString + "</p>";
             }
         } catch (FileNotFoundException e) {
@@ -73,6 +74,14 @@ public class JavaHTML {
             returnString = returnString.replace(" ", "&nbsp;");
         }
         return returnString;
+    }
+
+    private String commentMarker(String line){
+        String returnString=line;
+        if(returnString.contains("//")){
+            returnString = returnString.replace("//", "<span class=\"comment\">//");
+        }
+        return returnString+="</span>";
     }
 
 }

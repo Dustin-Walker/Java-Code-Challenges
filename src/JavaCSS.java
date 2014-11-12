@@ -21,12 +21,15 @@ public class JavaCSS {
             "\n    background-color: rgba(0, 0, 0, 0.12);" +
             "\n    font-size: small;\n}";
 
+    public final String commentCSS=".comment{\ncolor:rgba(0, 0, 0, 0.50);\n}\n";
+
     public void constructCSSFile(){
         PrintWriter writer;
         try {
             writer = new PrintWriter(fileName, "UTF-8");
             writer.println(keywordCSS);
             writer.println(bodyCSS);
+            writer.println(commentCSS);
             writer.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
