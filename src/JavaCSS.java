@@ -15,7 +15,7 @@ public class JavaCSS {
     String fileName;
 
     public final String keywordCSS =
-            ".keyword{\n    color:blue\n}";
+            ".keyword{\n    color:blue;\n}\n";
 
     public final String bodyCSS="body{\n    font-family: Roboto, sans-serif;" +
             "\n    background-color: rgba(0, 0, 0, 0.12);" +

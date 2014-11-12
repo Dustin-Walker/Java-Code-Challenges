@@ -39,6 +39,7 @@ public class JavaHTML {
             while(sc.hasNextLine())
             {
                 String fileString = sc.nextLine();
+                fileString = spaceReplace(fileString);
                 fileString = keywordCheck(fileString);
                 returnString += "<p>" + fileString + "</p>";
             }
@@ -57,6 +58,20 @@ public class JavaHTML {
         String returnString=line;
         for(String keyword:keywordList)
             returnString = returnString.replace(keyword, "<span class=\"keyword\">" + keyword + "</span>");
+        return returnString;
+    }
+
+    /**
+     * This method replaces normal spaces with the non-breaking space character.
+     * This retains the original whitespace when being displayed in a browser.
+     * @param line String to be processed
+     * @return String with spaces replaced with &nbsp;
+     */
+    private String spaceReplace(String line){
+        String returnString=line;
+        if(line.contains(" ")){
+            returnString = returnString.replace(" ", "&nbsp;");
+        }
         return returnString;
     }
 
