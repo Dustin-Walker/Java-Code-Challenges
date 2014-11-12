@@ -25,7 +25,7 @@ public class JavaHTML {
     String[] keywordList = {"abstract", "assert", "boolean", "break", "byte", "case", "catch", "char", "class",
             "const", "continue", "default", "do", "double", "else", "enum", "extends", "final", "finally", "float",
             "for", "goto", "if", "implements", "imports", "instanceof", "int ", "interface", "long", "native",
-            "new", "package", "private", "protected", "public", "return", "short", "static", "strictfp", "super",
+            "new ", "package", "private", "protected", "public", "return", "short", "static", "strictfp", "super",
             "switch", "synchronized", "this", "throw", "throws", "transient", "try", "void", "volatile", "while"};
 
     /**
@@ -36,13 +36,15 @@ public class JavaHTML {
         String returnString = "";
         try {
             Scanner sc = new Scanner(inputFile);
+            int i=1;
             while(sc.hasNextLine())
             {
                 String fileString = sc.nextLine();
-                fileString = spaceReplace(fileString);
+                fileString = replaceBrackets(fileString);
                 fileString = keywordCheck(fileString);
                 fileString = commentMarker(fileString);
-                returnString += "<p>" + fileString + "</p>";
+                fileString = ("<span class=\"comment\">" + String.format("%3d",(i++)) + "</span>" + " " + fileString);
+                returnString += fileString+"\n";
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -63,25 +65,39 @@ public class JavaHTML {
     }
 
     /**
-     * This method replaces normal spaces with the non-breaking space character.
-     * This retains the original whitespace when being displayed in a browser.
+     * Marks sections of the code as comments and applies relevant CSS code.
      * @param line String to be processed
-     * @return String with spaces replaced with &nbsp;
+     * @return String with comments marked
      */
-    private String spaceReplace(String line){
-        String returnString=line;
-        if(line.contains(" ")){
-            returnString = returnString.replace(" ", "&nbsp;");
-        }
-        return returnString;
-    }
-
     private String commentMarker(String line){
         String returnString=line;
         if(returnString.contains("//")){
             returnString = returnString.replace("//", "<span class=\"comment\">//");
+            return returnString+="</span>";
         }
-        return returnString+="</span>";
+        if(returnString.contains("/*")){
+            returnString = returnString.replace("/*", "<span class=\"comment\">/*");
+        }
+        if(returnString.contains("*/")){
+            returnString = returnString.replace("*/", "*/</span>");
+        }
+        return returnString;
+    }
+
+    /**
+     * Replaces < and > with appropriate HTML friendly code.
+     * @param line String to be processed
+     * @return String with brackets replaced
+     */
+    private String replaceBrackets(String line){
+        String returnString=line;
+        if(line.contains("<")){
+            returnString = returnString.replace("<", "&lt;");
+        }
+        if(line.contains(">")){
+            returnString = returnString.replace("<", "&gt;");
+        }
+        return returnString;
     }
 
 }

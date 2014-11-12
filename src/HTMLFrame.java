@@ -9,11 +9,13 @@ import java.io.UnsupportedEncodingException;
  */
 public class HTMLFrame {
 
-    private final String HEADER = "<!DOCTYPE html><html><head><link rel=\"stylesheet\" type =\"text/css\" href=\"test.css\"><title></title></head>";
+    private final String HEADER = "<!DOCTYPE html><html><head><link rel=\"stylesheet\"" +
+            " type =\"text/css\" href=\"test.css\">" +
+            "<title>Syntax Highlighter</title></head>";
     private String body;
 
     public void constructBody(String bodyText){
-        this.body = "<body>"+bodyText+"</body></html>";
+        this.body = "<body><pre>"+bodyText+"</pre></body></html>";
     }
 
     private String constructPage(){

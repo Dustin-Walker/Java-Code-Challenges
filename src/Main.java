@@ -4,8 +4,8 @@ public class Main {
 
     public static void main(String[] args) {
 	    /*
-	    TODO Add more keywords to keyword list
-	    TODO Methods to handle comments and CSS
+	    TODO Handle string literals
+	    TODO Handle class fields
 	    */
 
         File file = new File("content/SmartStackList.java");
