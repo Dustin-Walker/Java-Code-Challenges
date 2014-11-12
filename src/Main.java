@@ -11,7 +11,7 @@ public class Main {
         File file = new File("content/SmartStackList.java");
         HTMLFrame frame = new HTMLFrame();
         JavaHTML javaProcessor = new JavaHTML(file);
-        frame.constructBody(javaProcessor.fileToString());
+        frame.constructBody(javaProcessor.fileToHTML());
         frame.saveHTMLFile("test.html");
         JavaCSS javaCSS = new JavaCSS("test.css");
         javaCSS.constructCSSFile();

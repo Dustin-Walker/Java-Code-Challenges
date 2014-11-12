@@ -14,13 +14,19 @@ public class JavaCSS {
 
     String fileName;
 
-    public final String keywordCSS = ".keyword{color:blue}";
+    public final String keywordCSS =
+            ".keyword{\n    color:blue\n}";
+
+    public final String bodyCSS="body{\n    font-family: Roboto, sans-serif;" +
+            "\n    background-color: rgba(0, 0, 0, 0.12);" +
+            "\n    font-size: small;\n}";
 
     public void constructCSSFile(){
-        PrintWriter writer = null;
+        PrintWriter writer;
         try {
             writer = new PrintWriter(fileName, "UTF-8");
-            writer.print(keywordCSS);
+            writer.println(keywordCSS);
+            writer.println(bodyCSS);
             writer.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
