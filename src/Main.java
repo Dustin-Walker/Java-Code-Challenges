@@ -8,7 +8,7 @@ public class Main {
 	    TODO Handle class fields
 	    */
 
-        File file = new File("content/Point.java");
+        File file = new File("content/SmartStackList.java");
         HTMLFrame frame = new HTMLFrame();
         JavaHTML javaProcessor = new JavaHTML(file);
         frame.constructBody(javaProcessor.fileToHTML());

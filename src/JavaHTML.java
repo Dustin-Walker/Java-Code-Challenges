@@ -50,7 +50,7 @@ public class JavaHTML {
                 fileString = keywordCheck(fileString);
                 fileString = commentMarker(fileString);
                 fileString = stringLiteralMarker(fileString);
-                fileString = ("<span class=\"comment\">" + String.format("%3d",(i++)) + "</span>" + " " + fileString);
+                fileString = ("<span class=\"comment\">" + String.format("%3d",(i++)) + "|</span> " + fileString);
                 returnString += fileString+"\n";
             }
         } catch (FileNotFoundException e) {
@@ -129,12 +129,10 @@ public class JavaHTML {
                     continue;}
 
                 if (stringLiteral) {
-                    System.out.println("+" + s);
                     s = "<span class=\"stringLiteral\">\"" + s + "\"</span>";
                     splitLine[i] = s;
                     stringLiteral = false;
                 } else {
-                    System.out.println("-" + s);
                     stringLiteral = true;
                 }
             }
