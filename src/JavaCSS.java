@@ -23,6 +23,9 @@ public class JavaCSS {
 
     public final String commentCSS=".comment{\ncolor:grey !important;\n}\n";
 
+    public final String stringLiteralCSS=".stringLiteral{\ncolor:orange;\n}\n";
+
+
     public final String commentkeywordCSS=".comment .keyword{\ncolor:grey !important;\n}\n";
 
 
@@ -34,6 +37,7 @@ public class JavaCSS {
             writer.println(bodyCSS);
             writer.println(commentCSS);
             writer.println(commentkeywordCSS);
+            writer.println(stringLiteralCSS);
             writer.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();

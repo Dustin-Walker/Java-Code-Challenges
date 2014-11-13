@@ -16,7 +16,13 @@ public class JavaHTML {
         this.inputFile = file;
     }
 
+    /**
+     * Class fields
+     * inputFile is the java class file to be manipulated
+     * stringLiteral is a boolean to assist in marking string literals
+     */
     File inputFile;
+    boolean stringLiteral = false;
 
     /**
      * This is a list of all the keywords in Java.
@@ -43,6 +49,7 @@ public class JavaHTML {
                 fileString = replaceBrackets(fileString);
                 fileString = keywordCheck(fileString);
                 fileString = commentMarker(fileString);
+                fileString = stringLiteralMarker(fileString);
                 fileString = ("<span class=\"comment\">" + String.format("%3d",(i++)) + "</span>" + " " + fileString);
                 returnString += fileString+"\n";
             }
@@ -98,6 +105,44 @@ public class JavaHTML {
             returnString = returnString.replace("<", "&gt;");
         }
         return returnString;
+    }
+
+    /**
+     * Marks string literals for appropriate CSS
+     * @param line String to be processed
+     * @return String with string literals marked with a CSS tag
+     */
+    private String stringLiteralMarker(String line){
+        String sb = line;
+        if(line.contains("\"")) {
+            stringLiteral=false;
+            String[] splitLine = line.split("\"");
+            for (int i = 0, splitLineLength = splitLine.length; i < splitLineLength; i++) {
+                String s = splitLine[i];
+                if(s.length()>0 && s.charAt(s.length()-1)=='\\'){
+                    s +="\""+s; continue;
+                }
+                if(s.contains("<span class=") || s.equals("keyword") || s.equals("comment")
+                        /*|| s.length()>0
+                        && s.charAt(s.length()-1)=='\\'*/
+                        ){
+                    continue;}
+
+                if (stringLiteral) {
+                    System.out.println("+" + s);
+                    s = "<span class=\"stringLiteral\">\"" + s + "\"</span>";
+                    splitLine[i] = s;
+                    stringLiteral = false;
+                } else {
+                    System.out.println("-" + s);
+                    stringLiteral = true;
+                }
+            }
+            sb="";
+            for(String s : splitLine)
+                sb+=s;
+        }
+        return sb;
     }
 
 }
