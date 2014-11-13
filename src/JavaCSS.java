@@ -23,7 +23,7 @@ public class JavaCSS {
 
     public final String commentCSS=".comment{\ncolor:grey !important;\n}\n";
 
-    public final String stringLiteralCSS=".stringLiteral{\ncolor:orange;\n}\n";
+    public final String stringLiteralCSS=".stringLiteral{\ncolor:mediumvioletred;\n}\n";
 
 
     public final String commentkeywordCSS=".comment .keyword{\ncolor:grey !important;\n}\n";
