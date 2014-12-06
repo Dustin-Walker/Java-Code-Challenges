@@ -7,13 +7,13 @@ public class Main {
 	    TODO Handle bug in string literals with \" character
 	    TODO Handle class fields
 	    */
-
-        File file = new File("content/SmartStackList.java");
+        String fileName = "BST.java";
+        File file = new File("content/"+fileName);
         HTMLFrame frame = new HTMLFrame();
         JavaHTML javaProcessor = new JavaHTML(file);
         frame.constructBody(javaProcessor.fileToHTML());
-        frame.saveHTMLFile("test3.html");
-        JavaCSS javaCSS = new JavaCSS("test.css");
+        frame.saveHTMLFile(fileName+".html");
+        JavaCSS javaCSS = new JavaCSS(fileName+".css");
         javaCSS.constructCSSFile();
     }
 }
