@@ -21,7 +21,7 @@ public class AcronymExpander {
         acronymList.put("wp", "well played");
         acronymList.put("gl", "good luck");
         acronymList.put("imo", "in my opinion");
-    };
+    }
 
     /**
      * Replaces acronyms in the string with expanded words.
@@ -30,7 +30,6 @@ public class AcronymExpander {
      */
     public String expander(String s){
         for(String ls : acronymList.keySet())
-            if(s.contains(ls))
                 s = s.replaceAll("\\b"+ls+"\\b", acronymList.get(ls));
         return s;
     }
