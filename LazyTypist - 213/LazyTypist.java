@@ -7,13 +7,18 @@ public class LazyTypist {
 
     public static void main(String[] args) {
 	// write your code here
+        LazyTypist lazyTypist = new LazyTypist();
+        Graph g = new Graph(lazyTypist.keyboard);
+        for (Node node : g.nodeCollection.values())
+            System.out.println(node.key+" "+node.printEdgeList());
     }
 
-    private final String[] keyboard = {"qwertyuiop","asdfghjkl", "^zxcvbnm ^", "   #####  "};
+    private final String[] keyboard = {"qwertyuiop","asdfghjkl ", "^zxcvbnm ^", "   #####  "};
 
     public void analyzeStringKeyboardDistance(String inputString){
         int inputLength = inputString.length();
         char[] inputArray = inputString.toCharArray();
+
         // Initial character has no effort
 
         // Compare all the other characters against the follow character
@@ -29,30 +34,12 @@ public class LazyTypist {
      * Calculates the 'effort' or Manhattan distance (x+y) from one key to another
      * @param source
      * @param destination
-     * @return
+     * @return Number representing number of 'steps' required to move from source to destination
      */
     private int calculateEffort(char source, char destination){
         // TODO Use BFS algorithm
         return 0;
     }
 
-    /**
-     * TConverts a keyboard layout into a graph
-     * @param keyboard String array where each string element represents a line on the keyboard
-     * @return Populated graph containing keys as nodes
-     */
-    private Graph keyboardToGraph(String[] keyboard){
-        int keyboardRows = keyboard.length;
-        Graph g = new Graph();
-        for (int i = 0; i < keyboardRows; i++) {
-            int keyboardRowLength = keyboard[i].length();
-            for (int j = 0; j < keyboardRowLength; j++) {
-                g.addNode(new Node(keyboard[i].charAt(j)));
-                if(keyboardRowLength>1){
-                    // Add edges
-                }
-            }
-        }
-        return new Graph();
-    }
+
 }

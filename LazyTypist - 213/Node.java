@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+import java.util.Hashtable;
 
 /**
  * Created by Dustin on 5/17/15.
@@ -12,13 +12,22 @@ public class Node {
         this.key = key;
     }
 
-    public ArrayList<Character> edgeList = new ArrayList<Character>();
+    public Hashtable<Character, Character> edgeList = new Hashtable<Character, Character>();
+
+    public String printEdgeList(){
+        String s = "";
+        for(char c : edgeList.values()){
+            s = s.concat(c+" ");
+        }
+        return s;
+    }
+
 
     /**
      * Adds a non-directional edge between the current node and the destination node
      * @param destination Destination node for the edge
      */
     public void addEdge(char destination){
-        edgeList.add(destination);
+        edgeList.put(destination, destination);
     }
 }
