@@ -4,6 +4,8 @@
  * This program calculates and displays the 'effort' required to type a sentence using the hunt-and-peck typing method.
  */
 public class LazyTypist {
+    // TODO Write method to parse incoming text
+    // TODO Write a method to display output
 
     public static void main(String[] args) {
 	// write your code here
@@ -40,17 +42,37 @@ public class LazyTypist {
      * @return Number representing number of 'steps' required to move from source to destination
      */
     private int calculateEffort(char source, char destination){
-        // TODO Use BFS algorithm
-
-        // Set the fingerPositions
+          // Set the fingerPositions
         if( leftFinger=='=' || rightFinger=='=' ){
+            // Find which finger is closer
 
         }
 
-
+        // TODO Finish this method
 
         return 0;
     }
 
+    /**
+     * Method performs Dijkstra's algorithm to search the graph and calculate the 'effort'
+     * @param source Source key
+     * @param destination Destination key
+     * @return Integer representing how many edges were crossed to travel from source to destination
+     */
+    private int dijkstraGraphSearch(char source, char destination){
+        // TODO Re-use this code https://github.com/Dustin-Walker/FoodDelivery/blob/master/src/Main.java#L62-L138
+        return 0;
+    }
+
+    /**
+     * This method relaxes an edge. Updates and tests whether vertex v is an improvement upon the current path.
+     * This technique is described on page 649 of Introduction to Algorithms by Cormen et al.
+     * @param u Source vertex
+     * @param v Destination vertex
+     * @param w Edge being tested for relaxation
+     */
+    private void relax(Node u, Node v, String w){
+        // TODO Fill in this method
+    }
 
 }
