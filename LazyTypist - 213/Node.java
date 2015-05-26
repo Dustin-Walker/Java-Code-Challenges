@@ -6,9 +6,9 @@ import java.util.Hashtable;
  */
 public class Node {
 
-    public final char key;
+    public final String key;
 
-    public Node(char key){
+    public Node(String key){
         this.key = key;
     }
 

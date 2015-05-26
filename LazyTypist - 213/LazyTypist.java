@@ -8,12 +8,15 @@ public class LazyTypist {
     public static void main(String[] args) {
 	// write your code here
         LazyTypist lazyTypist = new LazyTypist();
-        Graph g = new Graph(lazyTypist.keyboard);
+        Graph g = new Graph().keyboardToGraph(lazyTypist.keyboard);
         for (Node node : g.nodeCollection.values())
             System.out.println(node.key+" "+node.printEdgeList());
     }
 
     private final String[] keyboard = {"qwertyuiop","asdfghjkl ", "^zxcvbnm ^", "   #####  "};
+
+    private static char leftFinger = '=';
+    private static char rightFinger = '=';
 
     public void analyzeStringKeyboardDistance(String inputString){
         int inputLength = inputString.length();
@@ -38,6 +41,14 @@ public class LazyTypist {
      */
     private int calculateEffort(char source, char destination){
         // TODO Use BFS algorithm
+
+        // Set the fingerPositions
+        if( leftFinger=='=' || rightFinger=='=' ){
+
+        }
+
+
+
         return 0;
     }
 
