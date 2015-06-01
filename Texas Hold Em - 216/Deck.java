@@ -8,16 +8,6 @@ public class Deck extends Stack<Card>{
 
     final public int DECK_SIZE = 52;
 
-    public Deck createNewDeck(int deckSize){
-        Deck deck = new Deck();
-        for(Suite suite : Suite.values())
-            for(CardType cardType : CardType.values())
-                deck.push(new Card(suite,cardType));
-        System.out.println(deck.size());
-        shuffleDeck(deckSize, deck);
-        return deck;
-    }
-
     /**
      * Fisher-Yates shuffle
      */
