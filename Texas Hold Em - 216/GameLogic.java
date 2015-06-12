@@ -3,7 +3,7 @@
  */
 public class GameLogic {
 
-    public String highestTexasHand(Card[] cards){
+    public PokerHand highestTexasHand(Card[] cards){
 
         assert cards.length==7;
         
@@ -11,27 +11,49 @@ public class GameLogic {
         int[] suites = cardSuiteCounter(cards);
 
         if (isStraight(cardTypes) && isFlush(suites))
-            return "straight flush";
+            return PokerHand.STRAIGHT_FLUSH;
 
         if (isFlush(suites))
-            return "flush";
+            return PokerHand.FLUSH;
 
         if (isFourOfAKind(cardTypes))
-            return "four of a kind";
+            return PokerHand.FOUR_OF_A_KIND;
 
         if (isFullHouse(cardTypes))
-            return "full house";
+            return PokerHand.FULL_HOUSE;
 
         if (isStraight(cardTypes))
-            return "straight";
+            return PokerHand.STRAIGHT;
+
+        if (isThreeOfAKind(cardTypes))
+            return PokerHand.THREE_OF_A_KIND;
 
         if (isTwoPair(cardTypes))
-            return "two pair";
+            return PokerHand.TWO_PAIR;
 
         if (isPair(cardTypes))
-            return "pair";
+            return PokerHand.PAIR;
 
-        return "high card";
+        return PokerHand.HIGH_CARD;
+    }
+
+
+    /**
+     * This method determines the winner of the table.
+     * @return
+     */
+    public String determineWinner(){
+
+        // TODO Use a dynamic programming approach
+
+        return null;
+    }
+
+    /**
+     * This helper method compares two players at a time.
+     */
+    private PokerHand determineWinner(Card[] playerACards, Card[] playerBcards){
+
     }
 
     /**
@@ -60,11 +82,10 @@ public class GameLogic {
     }
 
     private boolean isFourOfAKind(int[] cardTypes) {
-        int fourOfAKindCounter = 0;
         for(int cardType : cardTypes)
             if(cardType >= 4)
-                fourOfAKindCounter++;
-        return fourOfAKindCounter > 0;
+                return true;
+        return false;
     }
 
     private boolean isPair(int[] cardTypes) {
