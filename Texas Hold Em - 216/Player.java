@@ -7,11 +7,13 @@ import java.util.Set;
  */
 public class Player{
 
-    // Players can only have 2 cards at most
-    final public Card[] hand = new Card[2];
+
+    public Card[] hand;
 
 
     public Player(Card card1, Card card2) {
+        // Players can only have 2 cards at most
+        hand = new Card[2];
         this.hand[0] = card1;
         this.hand[1] = card2;
     }
