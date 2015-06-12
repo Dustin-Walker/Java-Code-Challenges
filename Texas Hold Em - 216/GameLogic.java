@@ -22,7 +22,6 @@ public class GameLogic {
         if (isFullHouse(cardTypes))
             return "full house";
 
-        
         if (isStraight(cardTypes))
             return "straight";
 
@@ -33,6 +32,47 @@ public class GameLogic {
             return "pair";
 
         return "high card";
+    }
+
+    /**
+     * This method is used to determine the high card for a player's hand.
+     * @param cards Cards to assess
+     * @return CardType of highest card in hand
+     */
+    public CardType playerHighCard(Card[] cards){
+        int cardType = 0;
+        for (Card card : cards){
+            switch (card.cardType){
+                case Two: if (cardType>2) break; else cardType = 2; break;
+                case Three: if (cardType>3) break; else cardType = 3; break;
+                case Four: if (cardType>4) break; else cardType = 4; break;
+                case Five: if (cardType>5) break; else cardType = 5; break;
+                case Six: if (cardType>6) break; else cardType = 6; break;
+                case Seven: if (cardType>7) break; else cardType = 7; break;
+                case Eight: if (cardType>8) break; else cardType = 8; break;
+                case Nine: if (cardType>9) break; else cardType = 9; break;
+                case Ten: if (cardType>10) break; else cardType = 10; break;
+                case Jack: if (cardType>11) break; else cardType = 11; break;
+                case Queen: if (cardType>12) break; else cardType = 12; break;
+                case King: cardType = 13; break;
+                case Ace: return CardType.Ace;
+            }
+        }
+        switch (cardType){
+            case 2: return CardType.Two;
+            case 3: return CardType.Three;
+            case 4: return CardType.Four;
+            case 5: return CardType.Five;
+            case 6: return CardType.Six;
+            case 7: return CardType.Seven;
+            case 8: return CardType.Eight;
+            case 9: return CardType.Nine;
+            case 10: return CardType.Ten;
+            case 11: return CardType.Jack;
+            case 12: return CardType.Queen;
+            case 13: return CardType.King;
+        }
+        return null;
     }
 
     private boolean isFullHouse(int[] cardTypes) {
@@ -53,7 +93,6 @@ public class GameLogic {
                 fourOfAKindCounter++;
         return fourOfAKindCounter > 0;
     }
-
 
     private boolean isPair(int[] cardTypes) {
         for (int cardType : cardTypes)
@@ -91,10 +130,10 @@ public class GameLogic {
     }
 
     private int[] cardTypeCounter(Card[] cards){
-        int[] cardTypes = new int[13];
+        int[] cardTypes = new int[14];
         for (Card card : cards) {
             switch (card.cardType){
-                case Ace:   cardTypes[0]++; break;
+                case Ace:   cardTypes[0]++; cardTypes[13]++; break;
                 case Two:   cardTypes[1]++; break;
                 case Three: cardTypes[2]++; break;
                 case Four:  cardTypes[3]++; break;
