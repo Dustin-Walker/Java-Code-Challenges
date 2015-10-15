@@ -8,7 +8,7 @@ public class Bowling {
     private static final int NUMBER_OF_FRAMES = 10;
 
     /**
-     * Method calculates a player's score based on the input string. Use X for strikes and / for spares.
+     * Method calculates a player's score based on the input string. Use X for strikes, / for spares, and - for missed throws.
      * @param scoreLine String representing score such as "X -/ X 5- 8/ 9- X 81 1- 4/X"
      * @return Player's score for the game
      */
@@ -38,7 +38,6 @@ public class Bowling {
                 case '/':
                     if (throwIndex == numberOfThrows-2){
                         // Last throw is a spare
-                        //valueArray[throwIndex] = SPARE_VALUE + rollAnalyzer(scoreArray[throwIndex+1]);
                         valueArray[throwIndex] = (10-rollAnalyzer(scoreArray[throwIndex-1])) + rollAnalyzer(scoreArray[throwIndex+1]);
                         valueArray[throwIndex+1] = 0;
                     } else if (throwIndex == numberOfThrows-1){ // Spare on last throw
