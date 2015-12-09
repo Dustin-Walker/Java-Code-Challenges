@@ -269,9 +269,9 @@ public class ClosestPoints {
         float delta = Math.min(deltaL, deltaR);
 
         if (distanceBetweenPoints(deltaLSet) < distanceBetweenPoints(deltaRSet)){
-            return closestPointsInSet(PL, XL, YL);
+            return deltaLSet;
         } else
-            return closestPointsInSet(PR, XR, YR);
+            return deltaRSet;
     }
 
     private float distanceBetweenPoints(Set<Point> points){
