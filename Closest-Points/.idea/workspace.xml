@@ -26,51 +26,15 @@
       <file leaf-file-name="ClosestPoints.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ClosestPoints.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="3.824074">
-              <caret line="273" column="29" selection-start-line="273" selection-start-column="29" selection-end-line="273" selection-end-column="29" />
+            <state vertical-scroll-proportion="3.5879629">
+              <caret line="181" column="5" selection-start-line="181" selection-start-column="5" selection-end-line="181" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#printClosestPointsFromFile#0;class#ClosestPoints#0" expanded="false" />
-                <element signature="method#pointPrinter#0;class#ClosestPoints#0" expanded="false" />
                 <element signature="method#readInputData#0;class#ClosestPoints#0" expanded="false" />
-                <element signature="method#findClosestPoints#0;class#ClosestPoints#0" expanded="false" />
                 <element signature="method#removeLastChar#0;class#ClosestPoints#0" expanded="false" />
                 <element signature="method#stringListToPointSet#0;class#ClosestPoints#0" expanded="false" />
                 <element signature="method#distanceBetweenPoints#0;class#ClosestPoints#0" expanded="false" />
-                <element signature="method#distanceBetweenPoints#1;class#ClosestPoints#0" expanded="false" />
-                <element signature="class#5482:5802" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sample.data" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sample.data">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-21.071428">
-              <caret line="5000" column="37" selection-start-line="5000" selection-start-column="37" selection-end-line="5000" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Point.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Point.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
-              <folding>
-                <element signature="e#106#107#0" expanded="false" />
-                <element signature="e#130#131#0" expanded="false" />
-                <element signature="e#163#164#0" expanded="false" />
-                <element signature="e#189#190#0" expanded="false" />
-                <element signature="e#216#217#0" expanded="false" />
-                <element signature="e#240#241#0" expanded="false" />
-                <element signature="e#273#274#0" expanded="false" />
-                <element signature="e#299#300#0" expanded="false" />
+                <element signature="method#pointSetToString#0;class#ClosestPoints#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -80,7 +44,30 @@
         <entry file="file://$PROJECT_DIR$/src/ClosestPointsTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sample.data" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sample.data">
+          <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-18.928572">
+              <caret line="5000" column="37" selection-start-line="5000" selection-start-column="37" selection-end-line="5000" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Point.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Point.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -91,8 +78,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit4 Test Class" />
         <option value="Class" />
+        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
@@ -104,12 +91,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/ClosestPointsTest.java" />
         <option value="$PROJECT_DIR$/src/Point.java" />
         <option value="$PROJECT_DIR$/out/production/Closest-Points/sample.data" />
         <option value="$PROJECT_DIR$/src/sample.data" />
-        <option value="$PROJECT_DIR$/src/ClosestPoints.java" />
         <option value="$PROJECT_DIR$/sample.data" />
+        <option value="$PROJECT_DIR$/src/ClosestPointsTest.java" />
+        <option value="$PROJECT_DIR$/src/ClosestPoints.java" />
       </list>
     </option>
   </component>
@@ -128,9 +115,9 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="61" />
-    <option name="width" value="1019" />
-    <option name="height" value="1920" />
+    <option name="x" value="58" />
+    <option name="width" value="1025" />
+    <option name="height" value="1923" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -155,9 +142,8 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -214,6 +200,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -238,7 +225,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.ClosestPointsTest">
     <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="ClosestPoints" />
@@ -254,6 +241,27 @@
       <envs />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ClosestPointsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="Closest-Points" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ClosestPointsTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
       <method />
     </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
@@ -484,12 +492,14 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
-    <list size="1">
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Application.Main" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.ClosestPointsTest" />
     </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Application.Main" />
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.ClosestPointsTest" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -519,14 +529,15 @@
       <workItem from="1449625422951" duration="247000" />
       <workItem from="1449685222538" duration="5394000" />
       <workItem from="1449692706688" duration="1145000" />
+      <workItem from="1449694587469" duration="2546000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32035000" />
+    <option name="totallyTimeSpent" value="34581000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="61" y="0" width="1019" height="1920" extended-state="6" />
+    <frame x="58" y="0" width="1025" height="1923" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -546,7 +557,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39966273" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -568,7 +579,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -577,39 +588,13 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Point.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
-          <folding>
-            <element signature="e#106#107#0" expanded="false" />
-            <element signature="e#130#131#0" expanded="false" />
-            <element signature="e#163#164#0" expanded="false" />
-            <element signature="e#189#190#0" expanded="false" />
-            <element signature="e#216#217#0" expanded="false" />
-            <element signature="e#240#241#0" expanded="false" />
-            <element signature="e#273#274#0" expanded="false" />
-            <element signature="e#299#300#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/out/production/Closest-Points/sample.data">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="39" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
       <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClosestPointsTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
+          <caret line="3" column="39" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
         </state>
       </provider>
     </entry>
@@ -619,15 +604,11 @@
           <caret line="277" column="46" selection-start-line="277" selection-start-column="46" selection-end-line="277" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#printClosestPointsFromFile#0;class#ClosestPoints#0" expanded="false" />
-            <element signature="method#pointPrinter#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#readInputData#0;class#ClosestPoints#0" expanded="false" />
-            <element signature="method#findClosestPoints#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#removeLastChar#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#stringListToPointSet#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#distanceBetweenPoints#0;class#ClosestPoints#0" expanded="false" />
-            <element signature="method#distanceBetweenPoints#1;class#ClosestPoints#0" expanded="false" />
-            <element signature="class#5482:5802" expanded="false" />
+            <element signature="method#pointSetToString#0;class#ClosestPoints#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -636,35 +617,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
-          <folding>
-            <element signature="e#106#107#0" expanded="false" />
-            <element signature="e#130#131#0" expanded="false" />
-            <element signature="e#163#164#0" expanded="false" />
-            <element signature="e#189#190#0" expanded="false" />
-            <element signature="e#216#217#0" expanded="false" />
-            <element signature="e#240#241#0" expanded="false" />
-            <element signature="e#273#274#0" expanded="false" />
-            <element signature="e#299#300#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/out/production/Closest-Points/sample.data">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="39" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
       <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClosestPointsTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
+          <caret line="3" column="39" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
         </state>
       </provider>
     </entry>
@@ -674,15 +637,11 @@
           <caret line="250" column="62" selection-start-line="250" selection-start-column="62" selection-end-line="250" selection-end-column="62" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#printClosestPointsFromFile#0;class#ClosestPoints#0" expanded="false" />
-            <element signature="method#pointPrinter#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#readInputData#0;class#ClosestPoints#0" expanded="false" />
-            <element signature="method#findClosestPoints#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#removeLastChar#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#stringListToPointSet#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#distanceBetweenPoints#0;class#ClosestPoints#0" expanded="false" />
-            <element signature="method#distanceBetweenPoints#1;class#ClosestPoints#0" expanded="false" />
-            <element signature="class#5482:5802" expanded="false" />
+            <element signature="method#pointSetToString#0;class#ClosestPoints#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -691,35 +650,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
-          <folding>
-            <element signature="e#106#107#0" expanded="false" />
-            <element signature="e#130#131#0" expanded="false" />
-            <element signature="e#163#164#0" expanded="false" />
-            <element signature="e#189#190#0" expanded="false" />
-            <element signature="e#216#217#0" expanded="false" />
-            <element signature="e#240#241#0" expanded="false" />
-            <element signature="e#273#274#0" expanded="false" />
-            <element signature="e#299#300#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/out/production/Closest-Points/sample.data">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="39" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
       <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClosestPointsTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
+          <caret line="3" column="39" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
         </state>
       </provider>
     </entry>
@@ -729,15 +670,11 @@
           <caret line="236" column="9" selection-start-line="236" selection-start-column="9" selection-end-line="236" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#printClosestPointsFromFile#0;class#ClosestPoints#0" expanded="false" />
-            <element signature="method#pointPrinter#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#readInputData#0;class#ClosestPoints#0" expanded="false" />
-            <element signature="method#findClosestPoints#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#removeLastChar#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#stringListToPointSet#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#distanceBetweenPoints#0;class#ClosestPoints#0" expanded="false" />
-            <element signature="method#distanceBetweenPoints#1;class#ClosestPoints#0" expanded="false" />
-            <element signature="class#5482:5802" expanded="false" />
+            <element signature="method#pointSetToString#0;class#ClosestPoints#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -746,35 +683,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
-          <folding>
-            <element signature="e#106#107#0" expanded="false" />
-            <element signature="e#130#131#0" expanded="false" />
-            <element signature="e#163#164#0" expanded="false" />
-            <element signature="e#189#190#0" expanded="false" />
-            <element signature="e#216#217#0" expanded="false" />
-            <element signature="e#240#241#0" expanded="false" />
-            <element signature="e#273#274#0" expanded="false" />
-            <element signature="e#299#300#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/out/production/Closest-Points/sample.data">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
       <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClosestPointsTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -784,15 +703,11 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#printClosestPointsFromFile#0;class#ClosestPoints#0" expanded="false" />
-            <element signature="method#pointPrinter#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#readInputData#0;class#ClosestPoints#0" expanded="false" />
-            <element signature="method#findClosestPoints#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#removeLastChar#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#stringListToPointSet#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#distanceBetweenPoints#0;class#ClosestPoints#0" expanded="false" />
-            <element signature="method#distanceBetweenPoints#1;class#ClosestPoints#0" expanded="false" />
-            <element signature="class#5482:5802" expanded="false" />
+            <element signature="method#pointSetToString#0;class#ClosestPoints#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -801,35 +716,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
-          <folding>
-            <element signature="e#106#107#0" expanded="false" />
-            <element signature="e#130#131#0" expanded="false" />
-            <element signature="e#163#164#0" expanded="false" />
-            <element signature="e#189#190#0" expanded="false" />
-            <element signature="e#216#217#0" expanded="false" />
-            <element signature="e#240#241#0" expanded="false" />
-            <element signature="e#273#274#0" expanded="false" />
-            <element signature="e#299#300#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/out/production/Closest-Points/sample.data">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
       <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClosestPointsTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -839,15 +736,11 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#printClosestPointsFromFile#0;class#ClosestPoints#0" expanded="false" />
-            <element signature="method#pointPrinter#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#readInputData#0;class#ClosestPoints#0" expanded="false" />
-            <element signature="method#findClosestPoints#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#removeLastChar#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#stringListToPointSet#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#distanceBetweenPoints#0;class#ClosestPoints#0" expanded="false" />
-            <element signature="method#distanceBetweenPoints#1;class#ClosestPoints#0" expanded="false" />
-            <element signature="class#5482:5802" expanded="false" />
+            <element signature="method#pointSetToString#0;class#ClosestPoints#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -856,53 +749,31 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
-          <folding>
-            <element signature="e#106#107#0" expanded="false" />
-            <element signature="e#130#131#0" expanded="false" />
-            <element signature="e#163#164#0" expanded="false" />
-            <element signature="e#189#190#0" expanded="false" />
-            <element signature="e#216#217#0" expanded="false" />
-            <element signature="e#240#241#0" expanded="false" />
-            <element signature="e#273#274#0" expanded="false" />
-            <element signature="e#299#300#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/production/Closest-Points/sample.data">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClosestPointsTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/out/production/Closest-Points/sample.data">
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ClosestPoints.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#printClosestPointsFromFile#0;class#ClosestPoints#0" expanded="false" />
-            <element signature="method#pointPrinter#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#readInputData#0;class#ClosestPoints#0" expanded="false" />
-            <element signature="method#findClosestPoints#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#removeLastChar#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#stringListToPointSet#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#distanceBetweenPoints#0;class#ClosestPoints#0" expanded="false" />
-            <element signature="method#distanceBetweenPoints#1;class#ClosestPoints#0" expanded="false" />
-            <element signature="class#5482:5802" expanded="false" />
+            <element signature="method#pointSetToString#0;class#ClosestPoints#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -913,15 +784,11 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#printClosestPointsFromFile#0;class#ClosestPoints#0" expanded="false" />
-            <element signature="method#pointPrinter#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#readInputData#0;class#ClosestPoints#0" expanded="false" />
-            <element signature="method#findClosestPoints#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#removeLastChar#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#stringListToPointSet#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#distanceBetweenPoints#0;class#ClosestPoints#0" expanded="false" />
-            <element signature="method#distanceBetweenPoints#1;class#ClosestPoints#0" expanded="false" />
-            <element signature="class#5482:5802" expanded="false" />
+            <element signature="method#pointSetToString#0;class#ClosestPoints#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -932,37 +799,33 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#printClosestPointsFromFile#0;class#ClosestPoints#0" expanded="false" />
-            <element signature="method#pointPrinter#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#readInputData#0;class#ClosestPoints#0" expanded="false" />
-            <element signature="method#findClosestPoints#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#removeLastChar#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#stringListToPointSet#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#distanceBetweenPoints#0;class#ClosestPoints#0" expanded="false" />
-            <element signature="method#distanceBetweenPoints#1;class#ClosestPoints#0" expanded="false" />
-            <element signature="class#5482:5802" expanded="false" />
+            <element signature="method#pointSetToString#0;class#ClosestPoints#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/out/production/Closest-Points/sample.data">
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sample.data">
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ClosestPoints.java">
@@ -971,37 +834,33 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#printClosestPointsFromFile#0;class#ClosestPoints#0" expanded="false" />
-            <element signature="method#pointPrinter#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#readInputData#0;class#ClosestPoints#0" expanded="false" />
-            <element signature="method#findClosestPoints#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#removeLastChar#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#stringListToPointSet#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#distanceBetweenPoints#0;class#ClosestPoints#0" expanded="false" />
-            <element signature="method#distanceBetweenPoints#1;class#ClosestPoints#0" expanded="false" />
-            <element signature="class#5482:5802" expanded="false" />
+            <element signature="method#pointSetToString#0;class#ClosestPoints#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/out/production/Closest-Points/sample.data">
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sample.data">
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ClosestPoints.java">
@@ -1010,27 +869,23 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#printClosestPointsFromFile#0;class#ClosestPoints#0" expanded="false" />
-            <element signature="method#pointPrinter#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#readInputData#0;class#ClosestPoints#0" expanded="false" />
-            <element signature="method#findClosestPoints#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#removeLastChar#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#stringListToPointSet#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#distanceBetweenPoints#0;class#ClosestPoints#0" expanded="false" />
-            <element signature="method#distanceBetweenPoints#1;class#ClosestPoints#0" expanded="false" />
-            <element signature="class#5482:5802" expanded="false" />
+            <element signature="method#pointSetToString#0;class#ClosestPoints#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sample.data">
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ClosestPoints.java">
@@ -1039,27 +894,23 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#printClosestPointsFromFile#0;class#ClosestPoints#0" expanded="false" />
-            <element signature="method#pointPrinter#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#readInputData#0;class#ClosestPoints#0" expanded="false" />
-            <element signature="method#findClosestPoints#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#removeLastChar#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#stringListToPointSet#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#distanceBetweenPoints#0;class#ClosestPoints#0" expanded="false" />
-            <element signature="method#distanceBetweenPoints#1;class#ClosestPoints#0" expanded="false" />
-            <element signature="class#5482:5802" expanded="false" />
+            <element signature="method#pointSetToString#0;class#ClosestPoints#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sample.data">
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ClosestPoints.java">
@@ -1068,27 +919,23 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#printClosestPointsFromFile#0;class#ClosestPoints#0" expanded="false" />
-            <element signature="method#pointPrinter#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#readInputData#0;class#ClosestPoints#0" expanded="false" />
-            <element signature="method#findClosestPoints#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#removeLastChar#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#stringListToPointSet#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#distanceBetweenPoints#0;class#ClosestPoints#0" expanded="false" />
-            <element signature="method#distanceBetweenPoints#1;class#ClosestPoints#0" expanded="false" />
-            <element signature="class#5482:5802" expanded="false" />
+            <element signature="method#pointSetToString#0;class#ClosestPoints#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sample.data">
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ClosestPoints.java">
@@ -1097,38 +944,34 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#printClosestPointsFromFile#0;class#ClosestPoints#0" expanded="false" />
-            <element signature="method#pointPrinter#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#readInputData#0;class#ClosestPoints#0" expanded="false" />
-            <element signature="method#findClosestPoints#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#removeLastChar#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#stringListToPointSet#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#distanceBetweenPoints#0;class#ClosestPoints#0" expanded="false" />
-            <element signature="method#distanceBetweenPoints#1;class#ClosestPoints#0" expanded="false" />
-            <element signature="class#5482:5802" expanded="false" />
+            <element signature="method#pointSetToString#0;class#ClosestPoints#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sample.data">
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample.data">
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="16" column="38" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
         </state>
       </provider>
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ClosestPoints.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1136,41 +979,29 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#printClosestPointsFromFile#0;class#ClosestPoints#0" expanded="false" />
-            <element signature="method#pointPrinter#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#readInputData#0;class#ClosestPoints#0" expanded="false" />
-            <element signature="method#findClosestPoints#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#removeLastChar#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#stringListToPointSet#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#distanceBetweenPoints#0;class#ClosestPoints#0" expanded="false" />
-            <element signature="method#distanceBetweenPoints#1;class#ClosestPoints#0" expanded="false" />
-            <element signature="class#5482:5802" expanded="false" />
+            <element signature="method#pointSetToString#0;class#ClosestPoints#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample.data">
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="16" column="38" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
         </state>
-      </provider>
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
       </provider>
     </entry>
     <entry file="jar:///opt/java/jdk1.8.0_45/jre/lib/rt.jar!/java/util/Set.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClosestPointsTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1189,71 +1020,72 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/out/production/Closest-Points/sample.data">
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-53.57143">
+          <caret line="100" column="38" selection-start-line="100" selection-start-column="38" selection-end-line="100" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample.data">
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-21.071428">
+          <caret line="100" column="38" selection-start-line="100" selection-start-column="38" selection-end-line="100" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///opt/java/jdk1.8.0_45/src.zip!/java/util/Comparator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="149" column="8" selection-start-line="149" selection-start-column="8" selection-end-line="149" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Point.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
-          <folding>
-            <element signature="e#106#107#0" expanded="false" />
-            <element signature="e#130#131#0" expanded="false" />
-            <element signature="e#163#164#0" expanded="false" />
-            <element signature="e#189#190#0" expanded="false" />
-            <element signature="e#216#217#0" expanded="false" />
-            <element signature="e#240#241#0" expanded="false" />
-            <element signature="e#273#274#0" expanded="false" />
-            <element signature="e#299#300#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/production/Closest-Points/sample.data">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-53.57143">
-          <caret line="100" column="38" selection-start-line="100" selection-start-column="38" selection-end-line="100" selection-end-column="38" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample.data">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.071428">
-          <caret line="100" column="38" selection-start-line="100" selection-start-column="38" selection-end-line="100" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sample.data">
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.071428">
+        <state vertical-scroll-proportion="-18.928572">
           <caret line="5000" column="37" selection-start-line="5000" selection-start-column="37" selection-end-line="5000" selection-end-column="37" />
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClosestPointsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ClosestPoints.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.824074">
-          <caret line="273" column="29" selection-start-line="273" selection-start-column="29" selection-end-line="273" selection-end-column="29" />
+        <state vertical-scroll-proportion="3.5879629">
+          <caret line="181" column="5" selection-start-line="181" selection-start-column="5" selection-end-line="181" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#printClosestPointsFromFile#0;class#ClosestPoints#0" expanded="false" />
-            <element signature="method#pointPrinter#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#readInputData#0;class#ClosestPoints#0" expanded="false" />
-            <element signature="method#findClosestPoints#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#removeLastChar#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#stringListToPointSet#0;class#ClosestPoints#0" expanded="false" />
             <element signature="method#distanceBetweenPoints#0;class#ClosestPoints#0" expanded="false" />
-            <element signature="method#distanceBetweenPoints#1;class#ClosestPoints#0" expanded="false" />
-            <element signature="class#5482:5802" expanded="false" />
+            <element signature="method#pointSetToString#0;class#ClosestPoints#0" expanded="false" />
           </folding>
         </state>
       </provider>

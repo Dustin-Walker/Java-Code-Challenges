@@ -1,73 +1,19 @@
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.nio.file.Files;
 import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
-import java.util.List;
 
 public class ClosestPoints {
-
-    private double lowestDistance = Integer.MAX_VALUE;
-    private String[] closestPointsStrings = new String[2];
-    private Point[] closestPoints = new Point[2];
-
-    public static void main(String[] args) throws IOException, NoSuchFileException {
-        ClosestPoints closestPoints = new ClosestPoints();
-        Set<Point> P = closestPoints.fileToPointSet("sample.data");
-        Set<Point> points = closestPoints.closestPointsInSet(P);
-        for (Point point : points){
-            System.out.println(point.getX() + ", " + point.getY());
-        }
-    }
 
     public Set<Point> fileToPointSet(String fileName) throws IOException {
         return stringListToPointSet(readInputData(fileName));
     }
 
-    public String printClosestPointsFromFile(String fileName) throws IOException, NoSuchFileException {
-        return pointPrinter(findClosestPoints(readInputData(fileName)));
-    }
-
-    public String pointPrinter(String[] points){
-        return points[0] + " and " + points[1] + " form the closest pair of points.";
-    }
-
     public List<String> readInputData(String fileName) throws IOException, NoSuchFileException{
         Path path = Paths.get(fileName);
         return Files.readAllLines(path);
-    }
-
-    /**
-     * Brute force approach
-     * Runs in O(n^2) time
-     * @param list List of points
-     * @return String array representing points
-     */
-    public String[] findClosestPoints(List<String> list){
-        int length = list.size();
-        for (int i = 1; i < length-1; i++) {
-            for (int j = i+1; j < length; j++) {
-                double x1 = Double.valueOf(list.get(i).split(",")[0].substring(1));
-                double y1 = Double.valueOf(removeLastChar(list.get(i).split(",")[1]));
-
-                double x2 = Double.valueOf(list.get(j).split(",")[0].substring(1));
-                double y2 = Double.valueOf(removeLastChar(list.get(j).split(",")[1]));
-
-                double deltaX = x1-x2;
-                double deltaY = y1-y2;
-
-                double distanceBetweenPoints = Math.sqrt(Math.pow(deltaX, 2) + Math.pow(deltaY, 2));
-
-                if (distanceBetweenPoints < lowestDistance){
-                    lowestDistance = distanceBetweenPoints;
-                    closestPointsStrings[0] = list.get(i);
-                    closestPointsStrings[1] = list.get(j);
-                }
-            }
-        }
-        return closestPointsStrings;
     }
 
     private String removeLastChar(String s){
@@ -89,12 +35,16 @@ public class ClosestPoints {
         return  pointSet;
     }
 
-    private float distanceBetweenPoints(Point[] points){
-        return (float) Math.sqrt(Math.pow(points[0].getX()-points[1].getX(), 2) + Math.pow(points[0].getY() - points[1].getY(), 2));
-    }
-
     private float distanceBetweenPoints(Point point1, Point point2){
         return (float) Math.sqrt(Math.pow(point1.getX()-point2.getX(), 2) + Math.pow(point1.getY() - point2.getY(), 2));
+    }
+
+    public String pointSetToString(Set<Point> P){
+        StringBuilder stringBuilder = new StringBuilder();
+        for (Point point : P){
+            stringBuilder.append("(").append(point.getX()).append(", ").append(point.getY()).append(")").append(" ");
+        }
+        return removeLastChar(stringBuilder.toString());
     }
 
 
@@ -113,25 +63,7 @@ public class ClosestPoints {
         Set<Point> closestSet = null;
         if (P.size() <= 3){
             // When |P| < 3, use the brute force approach
-            closestSet = new HashSet<>(2);
-            for (Point point : P){
-                for (Point point1: P){
-                    if (point.equals(point1))
-                        continue;
-                    if (distanceBetweenPoints(point, point1) < closestDistance){
-                        /*
-                        If the distance between the points is the closest yet encountered, set the closestDistance
-                        variable to the new distance, clear the closestPair set, and add the new points to the
-                        closestPair set.
-                         */
-                        closestDistance = distanceBetweenPoints(point, point1);
-                        closestSet.clear();
-                        closestSet.add(point); closestSet.add(point1);
-                    }
-
-                }
-            }
-            return closestSet;
+            return bruteForceClosestPoints(P);
         }
         // Pre-sort points
         Point[] Y = new Point[P.size()];
@@ -141,27 +73,21 @@ public class ClosestPoints {
             Y[i] = point;
             X[i++] = point;
         }
-        Arrays.sort(Y, new Comparator<Point>() {
-            @Override
-            public int compare(Point o1, Point o2) {
-                double x1 = o1.getY(), x2 = o2.getY();
-                if (x1 < x2)
-                    return -1;
-                if (x1 > x2)
-                    return 1;
-                return 0;
-            }
+        Arrays.sort(Y, (o1, o2) -> {
+            double x1 = o1.getY(), x2 = o2.getY();
+            if (x1 < x2)
+                return -1;
+            if (x1 > x2)
+                return 1;
+            return 0;
         });
-        Arrays.sort(X, new Comparator<Point>() {
-            @Override
-            public int compare(Point o1, Point o2) {
-                double x1 = o1.getX(), x2 = o2.getX();
-                if (x1 < x2)
-                    return -1;
-                if (x1 > x2)
-                    return 1;
-                return 0;
-            }
+        Arrays.sort(X, (o1, o2) -> {
+            double x1 = o1.getX(), x2 = o2.getX();
+            if (x1 < x2)
+                return -1;
+            if (x1 > x2)
+                return 1;
+            return 0;
         });
 
         // Divide and conquer step
@@ -172,6 +98,7 @@ public class ClosestPoints {
         assert closestSet != null;
         assert closestDistance != Float.MAX_VALUE;
 
+        // Combine step:
         // Pair is either deltaSet or points that exist on either side of the vertical dividing line
         // If closest pair are on either side of the dividing line, they must be within 2*delta units of each other
         float l = (X[X.length/2].getX()+X[(X.length/2)+1].getX())/2;
@@ -213,26 +140,7 @@ public class ClosestPoints {
     private Set<Point> closestPointsInSet(Set<Point> P, Point[] X, Point[] Y){
         if (P.size() <= 3){
             // When |P| < 3, use the brute force approach
-            float closestDistance = Float.MAX_VALUE;
-            Set<Point> closestPair = new HashSet<>(2);
-            for (Point point : P){
-                for (Point point1: P){
-                    if (point.equals(point1))
-                        continue;
-                    if (distanceBetweenPoints(point, point1) < closestDistance){
-                        /*
-                        If the distance between the points is the closest yet encountered, set the closestDistance
-                        variable to the new distance, clear the closestPair set, and add the new points to the
-                        closestPair set.
-                         */
-                        closestDistance = distanceBetweenPoints(point, point1);
-                        closestPair.clear();
-                        closestPair.add(point); closestPair.add(point1);
-                    }
-
-                }
-            }
-            return closestPair;
+            return bruteForceClosestPoints(P);
         }
 
         // When |P| > 3, execute the divide and conquer, recursive approach
@@ -256,31 +164,43 @@ public class ClosestPoints {
         XL = Arrays.copyOfRange(X, 0, P.size()/2);
         XR = Arrays.copyOfRange(X, P.size()/2, P.size());
 
-
         // Place points into YL and YR
         YL = Arrays.copyOfRange(Y, 0, P.size()/2);
         YR = Arrays.copyOfRange(Y, P.size()/2, P.size());
 
+        // Conquer step:
+        // Make two recursive calls
         Set<Point> deltaLSet = closestPointsInSet(PL, XL, YL);
         Set<Point> deltaRSet = closestPointsInSet(PR, XR, YR);
 
         float deltaL = distanceBetweenPoints(deltaLSet);
         float deltaR = distanceBetweenPoints(deltaRSet);
-        float delta = Math.min(deltaL, deltaR);
 
-        if (distanceBetweenPoints(deltaLSet) < distanceBetweenPoints(deltaRSet)){
+        if (deltaL < deltaR){
             return deltaLSet;
         } else
             return deltaRSet;
     }
 
     private float distanceBetweenPoints(Set<Point> points){
-        // brute force this
-        // When |P| < 3, use the brute force approach
         float closestDistance = Float.MAX_VALUE;
         Set<Point> closestPair = new HashSet<>(2);
         for (Point point : points){
             for (Point point1: points){
+                if (point.equals(point1))
+                    continue;
+                if (distanceBetweenPoints(point, point1) < closestDistance)
+                    closestDistance = distanceBetweenPoints(point, point1);
+            }
+        }
+        return closestDistance;
+    }
+
+    private Set<Point> bruteForceClosestPoints(Set<Point> P){
+        float closestDistance = Float.MAX_VALUE;
+        Set<Point> closestPair = new HashSet<>(2);
+        for (Point point : P){
+            for (Point point1: P){
                 if (point.equals(point1))
                     continue;
                 if (distanceBetweenPoints(point, point1) < closestDistance){
@@ -290,13 +210,13 @@ public class ClosestPoints {
                         closestPair set.
                          */
                     closestDistance = distanceBetweenPoints(point, point1);
-                  //  closestPair.clear();
-                   // closestPair.add(point); closestPair.add(point1);
+                    closestPair.clear();
+                    closestPair.add(point); closestPair.add(point1);
                 }
 
             }
         }
-        return closestDistance;
+        return closestPair;
     }
 
 }
