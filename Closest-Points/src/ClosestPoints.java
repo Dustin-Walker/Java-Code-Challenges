@@ -102,27 +102,20 @@ public class ClosestPoints {
         // Pair is either deltaSet or points that exist on either side of the vertical dividing line
         // If closest pair are on either side of the dividing line, they must be within 2*delta units of each other
         float l = (X[X.length/2].getX()+X[(X.length/2)+1].getX())/2;
-        ArrayList<Point> Yprime = new ArrayList<>();
+        Set<Point> Yprime = new HashSet<>();
         for (Point p : Y){
             if (p.getX()-l <= delta){
                 Yprime.add(p);
             }
         }
         // Brute force approach for closest points in Yprime
-        float deltaPrime = Float.MAX_VALUE;
-        for (Point point : Yprime){
-            for (Point point1 : Yprime){
-                if (point.equals(point1))
-                    continue;
-                deltaPrime = distanceBetweenPoints(point, point1);
-                if (deltaPrime < closestDistance) {
-                    closestDistance = deltaPrime;
-                    closestSet.clear();
-                    closestSet.add(point); closestSet.add(point1);
-                }
-            }
-        }
-        return closestSet;
+        Set<Point> deltaPrimeSet = bruteForceClosestPoints(Yprime);
+        float deltaPrime = distanceBetweenPoints(deltaPrimeSet);
+        // Return set that corresponds to min(δ, δ')
+        if (delta < deltaPrime)
+            return deltaSet;
+        else
+            return deltaPrimeSet;
     }
 
     /**
